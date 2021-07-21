@@ -1,0 +1,32 @@
+.footer {
+    width: 100%;
+    height: 70px;
+    background-color: #334f7e;
+    margin-top: auto;
+}
+
+.nav_list {
+    list-style: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.social_media {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}

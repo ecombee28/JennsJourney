@@ -1,0 +1,6 @@
+.main_container {
+    width: 400px;
+    min-height: 300px;
+    background-color: blue;
+    float: right;
+}

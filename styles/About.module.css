@@ -1,0 +1,26 @@
+.main_container {
+    width: 60%;
+    height: auto;
+    margin: 140px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-family: 'Cormorant', serif;
+}
+
+.img {
+    width: 70%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 1.7rem;
+}
