@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
     position: sticky;
     top: 0;
     left: 0;
@@ -56,8 +56,24 @@
 .icons {
     width: 30px;
     height: 30px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #000000;
+}
+
+.facebook:hover {
+    color: var(--facebook);
+}
+
+.twitter:hover {
+    color: var(--twitter);
+}
+
+.instagram:hover {
+    color: var(--instagram);
+}
+
+.pintrest:hover {
+    color: var(--pintrest)
 }
 
 .main_logo {

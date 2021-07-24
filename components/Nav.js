@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "../styles/Nav.module.css";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faPinterest,
-} from "@fortawesome/free-brands-svg-icons";
+import SocialIcon from "./SocialIcon";
 
 const Nav = () => {
   const [show, setShow] = useState(false);
@@ -50,29 +44,7 @@ const Nav = () => {
           className={`${style.mini_logo} ${show && style.show}`}
         />
         <div className={style.social_media}>
-          <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
-            <li className={style.nav_list}>
-              <FontAwesomeIcon icon={faFacebook} className={style.icons} />
-            </li>
-          </a>
-
-          <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
-            <li className={style.nav_list}>
-              <FontAwesomeIcon icon={faTwitter} className={style.icons} />
-            </li>
-          </a>
-
-          <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
-            <li className={style.nav_list}>
-              <FontAwesomeIcon icon={faPinterest} className={style.icons} />
-            </li>
-          </a>
-
-          <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
-            <li className={style.nav_list}>
-              <FontAwesomeIcon icon={faInstagram} className={style.icons} />
-            </li>
-          </a>
+          <SocialIcon position={"header"} />
         </div>
       </div>
     </>

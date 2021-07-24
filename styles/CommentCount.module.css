@@ -1,0 +1,28 @@
+.main_wrapper {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-left: auto;
+}
+
+.icon {
+    font-size: 2.2rem;
+}
+
+.comment_icon_color {
+    color: rgb(255, 255, 255);
+}
+
+.like_icon_color {
+    color: var(--like)
+}
+
+.count {
+    position: absolute;
+    top: 40%;
+    left: 44%;
+    transform: translate(-56%, -60%);
+    z-index: 20;
+    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+}

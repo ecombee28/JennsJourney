@@ -4,8 +4,13 @@ import PostPreview from "../components/PostPreview";
 import BlogPreview from "../components/BlogPreview";
 import HomeAbout from "../components/HomeAbout";
 import useMapPost from "../customHooks/useMapPost";
+import {
+  getLatestPosts,
+  getAllCommentCounts,
+  getAllLikeCounts,
+} from "../lib/api";
 
-export default function Home({ posts }) {
+export default function Home({ posts, likeCount, commentCount }) {
   const { Post } = useMapPost(posts);
 
   return (
@@ -25,7 +30,12 @@ export default function Home({ posts }) {
       <section className={style.main_content}>
         <div className={style.blogs}>
           {Post.mappedPost.map((p, index) => (
-            <BlogPreview key={index} blog={p} />
+            <BlogPreview
+              key={index}
+              blog={p}
+              likeCount={likeCount}
+              commentCount={commentCount}
+            />
           ))}
         </div>
         <div className={style.about}>
@@ -37,40 +47,11 @@ export default function Home({ posts }) {
 }
 
 export const getServerSideProps = async () => {
-  const allQuery = encodeURIComponent(
-    `*[_type == 'post'][0...6]|order(publishedAt desc){
-    _id,
-  publishedAt,
-  title,
-  slug,
-  excerpt,
-  description,
-  mainImage,
-  body[]{
-    ...,
-    children[]{
-      ...,
-      // Join inline reference
-      _type == "authorReference" => {
-        // check /studio/documents/authors.js for more fields
-        "name": @.author->name,
-        "slug": @.author->slug
-      }
-    }
-  },
-  "authors": authors[].author->,
-  "categories": categories[]{
-    "title": ^->title,
-    "slug": ^->slug.current
-  }
-  }`
-  );
+  const getAllPost = await getLatestPosts();
+  const allCommentCounts = await getAllCommentCounts();
+  const allLikeCounts = await getAllLikeCounts();
 
-  const url = `https://jynldnuf.api.sanity.io/v1/data/query/production?query=${allQuery}`;
-
-  const allResult = await fetch(url).then((res) => res.json());
-
-  if (!allResult.result) {
+  if (!getAllPost) {
     return {
       props: {
         posts: [],
@@ -79,7 +60,9 @@ export const getServerSideProps = async () => {
   } else {
     return {
       props: {
-        posts: allResult.result,
+        posts: getAllPost,
+        likeCount: allLikeCounts,
+        commentCount: allCommentCounts,
       },
     };
   }

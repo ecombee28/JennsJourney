@@ -1,0 +1,33 @@
+.icon_list {
+    list-style: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    color: #000000;
+    margin: auto;
+}
+
+.white {
+    color: #fff;
+}
+
+.facebook:hover {
+    color: var(--facebook);
+}
+
+.twitter:hover {
+    color: var(--twitter);
+}
+
+.instagram:hover {
+    color: var(--instagram);
+}
+
+.pintrest:hover {
+    color: var(--pintrest)
+}

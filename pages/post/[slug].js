@@ -5,8 +5,11 @@ import ShareButtons from "../../components/ShareButton";
 import useReadTime from "../../customHooks/useReadTime";
 import useImageBuilder from "../../customHooks/useImageBuilder";
 import useGetDate from "../../customHooks/useGetDate";
+import { getPostBySlug, getAllCountsBySlug } from "../../lib/api";
+import Comments from "../../components/Comments";
+import AddLike from "../../components/AddLike";
 
-const Post = ({ post }) => {
+const Post = ({ post, counts }) => {
   const twitterHandle = "jenn";
   const url = "https://www.facebook.com/jennifer.combee.5";
   const title = post.title;
@@ -14,6 +17,8 @@ const Post = ({ post }) => {
   const { readTime } = useReadTime(post);
   const { imageUrl } = useImageBuilder(post);
   const { date } = useGetDate(post.publishedAt);
+
+  console.log(counts.count[0].comment_count);
 
   return (
     <>
@@ -32,18 +37,27 @@ const Post = ({ post }) => {
             projectId="jynldnuf"
             dataset="production"
           />
-        </section>
-        <div className={style.share}>
-          <p>If you liked this post consider sharing it</p>
-          <div className={style.share_wrapper}>
-            <ShareButtons
-              title={title}
-              url={url}
-              twitterHandle={twitterHandle}
-              tags={tags}
-            />
+          <div className={style.share}>
+            <div className={style.heart_container}>
+              <AddLike
+                slug={post.slug.current}
+                commentCount={counts.count[0].comment_count}
+              />
+            </div>
+
+            <div className={style.share_wrapper}>
+              <p className={style.share_wrapper_text}>Share: </p>
+              <ShareButtons
+                title={title}
+                url={url}
+                twitterHandle={twitterHandle}
+                tags={tags}
+              />
+            </div>
           </div>
-        </div>
+
+          <Comments slug={post.slug.current} />
+        </section>
       </div>
     </>
   );
@@ -51,54 +65,20 @@ const Post = ({ post }) => {
 
 export const getServerSideProps = async (pageContext) => {
   const pageSlug = pageContext.query.slug;
+  const getPost = await getPostBySlug(pageSlug);
+  const counts = await getAllCountsBySlug(pageSlug);
 
-  if (!pageSlug) {
+  if (!getPost) {
     return {
-      notFound: true,
-    };
-  }
-
-  const query = encodeURIComponent(
-    `*[_type == 'post'  && slug.current == "${pageSlug}"]{
-      _id,
-    publishedAt,
-    title,
-    slug,
-    excerpt,
-    description,
-    mainImage,
-    body[]{
-      ...,
-      children[]{
-        ...,
-        // Join inline reference
-        _type == "authorReference" => {
-          // check /studio/documents/authors.js for more fields
-          "name": @.author->name,
-          "slug": @.author->slug
-        }
-      }
-    },
-    "authors": authors[].author->,
-    "categories": categories[]{
-      "title": ^->title,
-      "slug": ^->slug.current
-    }
-    }`
-  );
-  const url = `https://jynldnuf.api.sanity.io/v1/data/query/production?query=${query}`;
-
-  const result = await fetch(url).then((res) => res.json());
-  const post = result.result[0];
-
-  if (!post) {
-    return {
-      notFound: true,
+      props: {
+        post: [],
+      },
     };
   } else {
     return {
       props: {
-        post: post,
+        post: getPost,
+        counts: counts,
       },
     };
   }

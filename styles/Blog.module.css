@@ -20,7 +20,6 @@
     text-align: center;
     font-size: 3rem;
     font-weight: 500;
-    font-family: 'Cormorant', serif;
     margin-top: 70px;
 }
 
@@ -38,7 +37,6 @@
 .selections {
     font-size: 1.5rem;
     font-family: 700;
-    font-family: 'Cormorant', serif;
     cursor: pointer;
 }
 

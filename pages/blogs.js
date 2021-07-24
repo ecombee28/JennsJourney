@@ -3,8 +3,9 @@ import style from "../styles/Blog.module.css";
 import BlogPreview from "../components/BlogPreview";
 import useMapPost from "../customHooks/useMapPost";
 import NoPostFound from "../components/NoPostFound";
+import { getAllPosts, getAllCommentCounts, getAllLikeCounts } from "../lib/api";
 
-const blogs = ({ posts }) => {
+const blogs = ({ posts, likeCount, commentCount }) => {
   const { Post } = useMapPost(posts);
   const [query, setQuery] = useState("allpost");
   const [allPost, setAllPost] = useState(true);
@@ -74,13 +75,27 @@ const blogs = ({ posts }) => {
           Post.mappedPost.length == 0 ? (
             <NoPostFound />
           ) : (
-            Post.mappedPost.map((p, i) => <BlogPreview key={i} blog={p} />)
+            Post.mappedPost.map((p, i) => (
+              <BlogPreview
+                key={i}
+                blog={p}
+                likeCount={likeCount}
+                commentCount={commentCount}
+              />
+            ))
           )
         ) : query === "life" ? (
           Post.mappedLifePost.length == 0 ? (
             <NoPostFound />
           ) : (
-            Post.mappedLifePost.map((p, i) => <BlogPreview key={i} blog={p} />)
+            Post.mappedLifePost.map((p, i) => (
+              <BlogPreview
+                key={i}
+                blog={p}
+                likeCount={likeCount}
+                commentCount={commentCount}
+              />
+            ))
           )
         ) : query === "mother" ? (
           Post.mappedMotherPost.length == 0 ? (
@@ -93,7 +108,14 @@ const blogs = ({ posts }) => {
         ) : Post.mappedSpecialPost.length == 0 ? (
           <NoPostFound />
         ) : (
-          Post.mappedSpecialPost.map((p, i) => <BlogPreview key={i} blog={p} />)
+          Post.mappedSpecialPost.map((p, i) => (
+            <BlogPreview
+              key={i}
+              blog={p}
+              likeCount={likeCount}
+              commentCount={commentCount}
+            />
+          ))
         )}
       </div>
     </div>
@@ -101,39 +123,11 @@ const blogs = ({ posts }) => {
 };
 
 export const getServerSideProps = async () => {
-  const allQuery = encodeURIComponent(
-    `*[_type == 'post'  ]|order(publishedAt desc){
-      _id,
-    publishedAt,
-    title,
-    slug,
-    excerpt,
-    description,
-    mainImage,
-    body[]{
-      ...,
-      children[]{
-        ...,
-        // Join inline reference
-        _type == "authorReference" => {
-          // check /studio/documents/authors.js for more fields
-          "name": @.author->name,
-          "slug": @.author->slug
-        }
-      }
-    },
-    "authors": authors[].author->,
-    "categories": categories[]{
-      "title": ^->title,
-      "slug": ^->slug.current
-    }
-    }`
-  );
-  const url = `https://jynldnuf.api.sanity.io/v1/data/query/production?query=${allQuery}`;
+  const getAllPost = await getAllPosts();
+  const allCommentCounts = await getAllCommentCounts();
+  const allLikeCounts = await getAllLikeCounts();
 
-  const allResult = await fetch(url).then((res) => res.json());
-
-  if (!allResult.result) {
+  if (!getAllPost) {
     return {
       props: {
         posts: [],
@@ -142,7 +136,9 @@ export const getServerSideProps = async () => {
   } else {
     return {
       props: {
-        posts: allResult.result,
+        posts: getAllPost,
+        likeCount: allLikeCounts,
+        commentCount: allCommentCounts,
       },
     };
   }
