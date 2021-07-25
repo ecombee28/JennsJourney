@@ -1,9 +1,15 @@
 import React from "react";
 import style from "../styles/About.module.css";
+import Head from "next/head";
 
 const about = () => {
   return (
     <div>
+      <Head>
+        <title>About | Jenns Journey</title>
+        <meta name="keywords" content="web dev" />
+        <link rel="shortcut icon" href="logo.ico" />
+      </Head>
       <div className={style.main_container}>
         <img src="/about_img2.jpg" className={style.img} />
         <h1 className={style.title}>What is Jenn's Journey?</h1>

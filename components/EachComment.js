@@ -7,7 +7,9 @@ const EachComment = ({ comment }) => {
 
   return (
     <div className={style.comment_wrapper}>
-      <p className={style.avatar}>{comment.name.substr(0, 1)}</p>
+      <div className={style.avatar}>
+        <p>{comment.name.substr(0, 1)}</p>
+      </div>
       <div className={style.comment_section}>
         <li className={`${style.comment_list} ${style.name}`}>
           {comment.name}

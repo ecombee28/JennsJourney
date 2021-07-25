@@ -16,6 +16,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 5px;
+    position: relative;
 }
 
 .label {
@@ -45,11 +46,11 @@
 }
 
 .btn {
-    padding: 5px 10px;
+    padding: 10px 10px;
     background-color: var(--blue);
     color: #fff;
     font-size: 1.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px 0 50px 0;
     border: none;
     outline: none;
@@ -61,4 +62,35 @@
 .btn:hover {
     -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.emoji {
+    position: absolute;
+    top: 7px;
+    left: 95%;
+    font-size: 1.5rem;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.emoji_picker {
+    position: absolute;
+    top: 40px;
+    left: 28%;
+    display: none;
+}
+
+.open {
+    display: block;
+}
+
+.error {
+    font-size: 1rem;
+    color: red;
+    margin-left: 10px;
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
 }

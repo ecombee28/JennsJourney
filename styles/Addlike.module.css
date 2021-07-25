@@ -30,9 +30,13 @@
 
 .icon {
     font-size: 1.7rem;
-    color: var(--like);
+    color: var(--unlike);
     cursor: pointer;
     margin-bottom: 10px;
+}
+
+.liked {
+    color: var(--like);
 }
 
 .tooltip {

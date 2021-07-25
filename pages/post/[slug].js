@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Head from "next/head";
 import style from "../../styles/Post.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 import ShareButtons from "../../components/ShareButton";
@@ -10,6 +11,9 @@ import Comments from "../../components/Comments";
 import AddLike from "../../components/AddLike";
 
 const Post = ({ post, counts }) => {
+  const [commentCount, setCommentCount] = useState(
+    counts.count[0].comment_count
+  );
   const twitterHandle = "jenn";
   const url = "https://www.facebook.com/jennifer.combee.5";
   const title = post.title;
@@ -18,10 +22,17 @@ const Post = ({ post, counts }) => {
   const { imageUrl } = useImageBuilder(post);
   const { date } = useGetDate(post.publishedAt);
 
-  console.log(counts.count[0].comment_count);
+  const upDateCommentCount = () => {
+    setCommentCount(commentCount + 1);
+  };
 
   return (
     <>
+      <Head>
+        <title>{post.title} | Jenns Journey</title>
+        <meta name="keywords" content="web dev" />
+        <link rel="shortcut icon" href="logo.ico" />
+      </Head>
       <div className={style.main_wrapper}>
         <p className={style.title}>{post.title}</p>
         <div className={style.sub_wrapper}>
@@ -39,10 +50,7 @@ const Post = ({ post, counts }) => {
           />
           <div className={style.share}>
             <div className={style.heart_container}>
-              <AddLike
-                slug={post.slug.current}
-                commentCount={counts.count[0].comment_count}
-              />
+              <AddLike slug={post.slug.current} commentCount={commentCount} />
             </div>
 
             <div className={style.share_wrapper}>
@@ -56,7 +64,7 @@ const Post = ({ post, counts }) => {
             </div>
           </div>
 
-          <Comments slug={post.slug.current} />
+          <Comments slug={post.slug.current} update={upDateCommentCount} />
         </section>
       </div>
     </>

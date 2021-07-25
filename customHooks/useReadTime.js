@@ -10,7 +10,11 @@ export default function useReadTime(blog) {
       t.children ? (totalWords += t.children[0].text) : (totalWords += 30);
     });
 
-    setReadTime(Math.round(totalWords.length / 270));
+    function WordCount(str) {
+      return str.split(" ").length;
+    }
+
+    setReadTime(Math.round(WordCount(totalWords) / 200));
   }, [blog]);
 
   return {

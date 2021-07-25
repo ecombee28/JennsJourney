@@ -6,7 +6,7 @@ import { getCommentsBySlug, addComments } from "../lib/api";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-export default function Comments({ slug }) {
+export default function Comments({ slug, update }) {
   const [comments, setComments] = useState([]);
   const [commentAdded, setCommentAdded] = useState(false);
 
@@ -20,6 +20,7 @@ export default function Comments({ slug }) {
     const add = await addComments(data);
 
     setCommentAdded(true);
+    update();
   };
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function Comments({ slug }) {
             <p>{`comments (${comments.comments.length})`}</p>
             <div className={style.main_comment_display}>
               {!comments.comments.length ? (
-                <h2>Before the first to post</h2>
+                <h3>Be the first to comment</h3>
               ) : (
                 comments.comments.map((c) => (
                   <EachComment key={c.id} comment={c} />

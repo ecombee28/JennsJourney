@@ -83,14 +83,30 @@
 /* This is the img that is in the body */
 
 .blog_container figure img {
-    max-width: 60%;
-    max-height: 500px;
+    max-width: 70%;
+    object-fit: contain;
 }
 
 .blog_container p {
     margin-bottom: 20px;
     font-size: 1.4rem;
     font-family: 'Alegreya', serif;
+}
+
+.blog_container h1 {
+    font-size: 4rem;
+}
+
+.blog_container h2 {
+    font-size: 3rem;
+}
+
+.blog_container h3 {
+    font-size: 2rem;
+}
+
+.blog_container h4 {
+    font-size: 1.5rem;
 }
 
 .share {

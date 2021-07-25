@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import style from "../styles/Home.module.css";
 import PostPreview from "../components/PostPreview";
 import BlogPreview from "../components/BlogPreview";
@@ -11,12 +12,17 @@ import {
 } from "../lib/api";
 
 export default function Home({ posts, likeCount, commentCount }) {
-  const { Post } = useMapPost(posts);
+  const { mappedPost } = useMapPost(posts);
 
   return (
     <div>
+      <Head>
+        <title>Jenns Journey</title>
+        <meta name="keywords" content="web dev" />
+        <link rel="shortcut icon" href="logo.ico" />
+      </Head>
       <div className={style.recent_blogs_container}>
-        {Post.mappedPost.slice(0, 3).map((p, index) => (
+        {mappedPost.slice(0, 3).map((p, index) => (
           <PostPreview
             key={index}
             image={p.mainImage}
@@ -29,7 +35,7 @@ export default function Home({ posts, likeCount, commentCount }) {
       <p className={style.latest_title}>Latest</p>
       <section className={style.main_content}>
         <div className={style.blogs}>
-          {Post.mappedPost.map((p, index) => (
+          {mappedPost.map((p, index) => (
             <BlogPreview
               key={index}
               blog={p}

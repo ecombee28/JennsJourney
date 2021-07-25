@@ -49,7 +49,7 @@ const HomeAbout = () => {
           such as my experience raising children with autism, managing stress,
           saving money, career joy and much more!
         </p>
-        <Link href="">
+        <Link href="/about">
           <p className={`${style.text} ${style.learn_more}`}>Learn more..</p>
         </Link>
       </div>

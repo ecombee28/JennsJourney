@@ -50,7 +50,7 @@ const AddLike = ({ slug, commentCount }) => {
       <div className={style.heart_wrapper}>
         <FontAwesomeIcon
           icon={faHeart}
-          className={`${style.icon}`}
+          className={`${style.icon} ${postLiked && style.liked}`}
           onClick={liked}
         />
         <p className={style.count} onClick={liked}>

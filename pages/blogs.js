@@ -1,12 +1,28 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 import style from "../styles/Blog.module.css";
 import BlogPreview from "../components/BlogPreview";
 import useMapPost from "../customHooks/useMapPost";
 import NoPostFound from "../components/NoPostFound";
-import { getAllPosts, getAllCommentCounts, getAllLikeCounts } from "../lib/api";
+import {
+  getAllPosts,
+  getAllCommentCounts,
+  getAllLikeCounts,
+  getPostByCategory,
+} from "../lib/api";
 
-const blogs = ({ posts, likeCount, commentCount }) => {
-  const { Post } = useMapPost(posts);
+const blogs = ({
+  posts,
+  likeCount,
+  commentCount,
+  lifePost,
+  specialPost,
+  motherPost,
+}) => {
+  const allMappedPost = useMapPost(posts);
+  const allLifePost = useMapPost(lifePost);
+  const allSpecialPost = useMapPost(specialPost);
+  const allMotherPost = useMapPost(motherPost);
   const [query, setQuery] = useState("allpost");
   const [allPost, setAllPost] = useState(true);
   const [life, setLife] = useState(false);
@@ -43,6 +59,11 @@ const blogs = ({ posts, likeCount, commentCount }) => {
 
   return (
     <div>
+      <Head>
+        <title>Blogs | Jenns Journey</title>
+        <meta name="keywords" content="web dev" />
+        <link rel="shortcut icon" href="logo.ico" />
+      </Head>
       <h1 className={style.title}>Blogs</h1>
       <section className={style.selector_container}>
         <p
@@ -72,10 +93,10 @@ const blogs = ({ posts, likeCount, commentCount }) => {
       </section>
       <div className={style.main_container}>
         {query === "allpost" ? (
-          Post.mappedPost.length == 0 ? (
+          allMappedPost.mappedPost.length == 0 ? (
             <NoPostFound />
           ) : (
-            Post.mappedPost.map((p, i) => (
+            allMappedPost.mappedPost.map((p, i) => (
               <BlogPreview
                 key={i}
                 blog={p}
@@ -85,10 +106,10 @@ const blogs = ({ posts, likeCount, commentCount }) => {
             ))
           )
         ) : query === "life" ? (
-          Post.mappedLifePost.length == 0 ? (
+          allLifePost.mappedPost.length == 0 ? (
             <NoPostFound />
           ) : (
-            Post.mappedLifePost.map((p, i) => (
+            allLifePost.mappedPost.map((p, i) => (
               <BlogPreview
                 key={i}
                 blog={p}
@@ -98,17 +119,22 @@ const blogs = ({ posts, likeCount, commentCount }) => {
             ))
           )
         ) : query === "mother" ? (
-          Post.mappedMotherPost.length == 0 ? (
+          allMotherPost.mappedPost.length == 0 ? (
             <NoPostFound />
           ) : (
-            Post.mappedMotherPost.map((p, i) => (
-              <BlogPreview key={p.i} blog={p} />
+            allMotherPost.mappedPost.map((p, i) => (
+              <BlogPreview
+                key={i}
+                blog={p}
+                likeCount={likeCount}
+                commentCount={commentCount}
+              />
             ))
           )
-        ) : Post.mappedSpecialPost.length == 0 ? (
+        ) : allSpecialPost.mappedPost.length == 0 ? (
           <NoPostFound />
         ) : (
-          Post.mappedSpecialPost.map((p, i) => (
+          allSpecialPost.mappedPost.map((p, i) => (
             <BlogPreview
               key={i}
               blog={p}
@@ -126,6 +152,9 @@ export const getServerSideProps = async () => {
   const getAllPost = await getAllPosts();
   const allCommentCounts = await getAllCommentCounts();
   const allLikeCounts = await getAllLikeCounts();
+  const allLikePosts = await getPostByCategory("Life");
+  const allSpecialPosts = await getPostByCategory("Special Needs");
+  const allMotherPosts = await getPostByCategory("Motherhood");
 
   if (!getAllPost) {
     return {
@@ -139,6 +168,9 @@ export const getServerSideProps = async () => {
         posts: getAllPost,
         likeCount: allLikeCounts,
         commentCount: allCommentCounts,
+        lifePost: allLikePosts,
+        specialPost: allSpecialPosts,
+        motherPost: allMotherPosts,
       },
     };
   }

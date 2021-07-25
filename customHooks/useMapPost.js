@@ -31,36 +31,42 @@ export default function useMapPost(posts) {
     sortData();
   }, [posts]);
 
-  useEffect(() => {
-    const filterMapped = () => {
-      setMappedLifePost(
-        mappedPost.filter(function (p) {
-          return p.categories[0].title === "Life";
-        })
-      );
+  // useEffect(async () => {
+  //   const filterMapped = () => {
+  //     // setMappedLifePost(
+  //     //   mappedPost.filter(function (p) {
+  //     //     return p.categories[0].title === "Life";
+  //     //   })
+  //     // );
 
-      setMappedMotherPost(
-        mappedPost.filter(function (p) {
-          return p.categories[0].title === "Motherhood";
-        })
-      );
+  //     mappedPost.map((m) => {
+  //       m.categories.map((t) => {
+  //         if (t.title === "life") {
+  //           setMappedLifePost("d");
+  //         }
+  //       });
+  //     });
 
-      setMappedSpecialPost(
-        mappedPost.filter(function (p) {
-          return p.categories[0].title === "Special Needs";
-        })
-      );
-    };
+  //     setMappedMotherPost(
+  //       mappedPost.filter(function (p) {
+  //         return p.categories[0].title === "Motherhood";
+  //       })
+  //     );
 
-    filterMapped();
-  }, [mappedPost]);
+  //     setMappedSpecialPost(
+  //       mappedPost.filter(function (p) {
+  //         return p.categories[0].title === "Special Needs";
+  //       })
+  //     );
+  //   };
+
+  //   await filterMapped();
+  // }, [mappedPost]);
 
   return {
-    Post: {
-      mappedPost: mappedPost,
-      mappedLifePost: mappedLifePost,
-      mappedMotherPost: mappedMotherPost,
-      mappedSpecialPost: mappedSpecialPost,
-    },
+    mappedPost: mappedPost,
+    // mappedLifePost: mappedLifePost,
+    // mappedMotherPost: mappedMotherPost,
+    // mappedSpecialPost: mappedSpecialPost,
   };
 }
