@@ -82,18 +82,24 @@ export default function Form({ onsubmit }) {
           <label className={`${style.error} ${commentError && style.show}`}>
             Must be filled out!
           </label>
+          <label className={style.label}>
+            <FontAwesomeIcon
+              icon={faSmile}
+              className={style.emoji_icon}
+              onClick={() => setOpenEmoji(true)}
+            />
+          </label>
         </span>
 
-        <FontAwesomeIcon
-          icon={faSmile}
-          className={style.emoji}
-          onClick={() => setOpenEmoji(true)}
-        />
         <div
           className={`${style.emoji_picker} ${openEmoji && style.open}`}
           ref={node}
         >
-          <Picker onSelect={addEmoji} />
+          <Picker
+            onSelect={addEmoji}
+            style={{ width: "250px" }}
+            disableSearchBar={true}
+          />
         </div>
 
         <textarea

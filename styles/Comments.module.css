@@ -1,5 +1,5 @@
 .main_container {
-    width: 90%;
+    width: 100%;
     min-height: 200px;
     margin: 60px auto;
     padding: 15px;
@@ -14,13 +14,9 @@
     margin-bottom: 50px;
 }
 
-.main_comment_display:nth-child(1) .comment_wrapper {
-    background-color: aqua;
-}
-
-.title {
+.main_container .title {
     font-size: 3.3rem;
-    color: #000;
+    color: rgb(0, 0, 0);
 }
 
 .comment_wrapper {
@@ -82,4 +78,34 @@
     font-size: 1.3rem;
     font-size: 400;
     margin-top: 20px;
+}
+
+@media screen and (max-width:1200px) {
+    .comment_wrapper {
+        width: 90%;
+        margin-left: auto;
+        -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .main_container {
+        padding: 1px;
+    }
+    .main_container .title {
+        font-size: 2rem;
+        color: rgb(0, 0, 0);
+    }
+    .comment_wrapper {
+        width: 90%;
+        margin-left: auto;
+        -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+    .comment {
+        font-size: 1rem;
+    }
 }

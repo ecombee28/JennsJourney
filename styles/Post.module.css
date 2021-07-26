@@ -83,7 +83,7 @@
 /* This is the img that is in the body */
 
 .blog_container figure img {
-    max-width: 70%;
+    max-width: 80%;
     object-fit: contain;
 }
 
@@ -110,11 +110,12 @@
 }
 
 .share {
-    width: 80%;
+    width: 100%;
     margin: 15px 0;
     color: black;
     font-size: 1.4rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: baseline;
     gap: 20px;
@@ -122,7 +123,7 @@
 
 .share_wrapper {
     width: 220px;
-    margin: 10px 0;
+    margin: 10px auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -141,4 +142,73 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+}
+
+@media screen and (max-width:780px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .landing_image {
+        width: 100%;
+        object-fit: cover;
+        margin-top: 20px;
+    }
+    .blog_container {
+        width: 95%;
+        padding: 5px;
+        margin-top: 90px;
+    }
+    .blog_container h1 {
+        font-size: 2.5rem;
+    }
+    .blog_container h2 {
+        font-size: 2rem;
+    }
+    .blog_container h3 {
+        font-size: 1.8rem;
+    }
+    .blog_container h4 {
+        font-size: 1.4rem;
+    }
+    .share {
+        width: 100%;
+        margin: 15px 0;
+        color: black;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 10px;
+    }
+    .share_wrapper {
+        width: 220px;
+        margin: 10px auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: auto;
+    }
+    .share_wrapper_text {
+        margin-right: 10px;
+        font-size: 1.9rem;
+        color: #000;
+    }
+}
+
+@media screen and (max-width:780px) {
+    .title {
+        font-size: 1.7rem;
+    }
+    .blog_container h1 {
+        font-size: 2rem;
+    }
+    .blog_container h2 {
+        font-size: 1.5rem;
+    }
+    .blog_container h3 {
+        font-size: .8rem;
+    }
+    .blog_container h4 {
+        font-size: 5rem;
+    }
 }

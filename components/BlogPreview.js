@@ -38,10 +38,7 @@ const BlogPreview = ({ blog, commentCount, likeCount }) => {
               <li className={style.list}>{`${commentCounts} comments `}</li>
               <li className={`${style.list} ${style.divider}`}>|</li>
               <li className={style.list}>
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  style={{ color: "var(--like)" }}
-                />
+                <FontAwesomeIcon icon={faHeart} className={style.icon} />
               </li>
               <li className={style.list}>{`${likesCounts}`}</li>
             </div>

@@ -1,6 +1,8 @@
 .main_container {
-    width: 450px;
-    height: 600px;
+    min-width: 350px;
+    max-width: 380px;
+    width: 40%;
+    height: 550px;
     background-color: var(--white);
     font-family: 'Alegreya', serif;
     position: relative;
@@ -96,7 +98,7 @@
 
 .list {
     list-style: none;
-    font-size: .87rem;
+    font-size: clamp(.8rem, .8vw, .8vw);
     font-weight: 600;
     color: #000000;
 }
@@ -119,4 +121,29 @@
 
 .divider {
     color: #000000;
+}
+
+.icon {
+    width: 18px;
+    font-size: .9rem;
+    color: var(--like);
+}
+
+@media screen and (max-width: 900px) {
+    .main_container {
+        min-width: 300px;
+        max-width: 380px;
+    }
+    .list {
+        font-size: .6rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_container {
+        width: 300px;
+    }
+    .list {
+        font-size: .6rem;
+    }
 }

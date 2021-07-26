@@ -45,18 +45,16 @@ export default function Comments({ slug, update }) {
           <h2 className={style.title}>Leave a comment</h2>
           <Form onsubmit={onSubmit} />
 
-          <div>
-            <h2>Here's what others have to say</h2>
-            <p>{`comments (${comments.comments.length})`}</p>
-            <div className={style.main_comment_display}>
-              {!comments.comments.length ? (
-                <h3>Be the first to comment</h3>
-              ) : (
-                comments.comments.map((c) => (
-                  <EachComment key={c.id} comment={c} />
-                ))
-              )}
-            </div>
+          <h2 style={{ fontSize: "1.3rem" }}>Here's what others have to say</h2>
+          <p>{`comments (${comments.comments.length})`}</p>
+          <div className={style.main_comment_display}>
+            {!comments.comments.length ? (
+              <h3>Be the first to comment</h3>
+            ) : (
+              comments.comments.map((c) => (
+                <EachComment key={c.id} comment={c} />
+              ))
+            )}
           </div>
         </div>
       )}
