@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
     position: sticky;
     top: 0;
     left: 0;
@@ -18,7 +18,7 @@
     height: 20vh;
     min-height: 15vh;
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
 }
 
 .nav {
@@ -31,18 +31,19 @@
 }
 
 .nav_link_container {
-    width: 340px;
+    width: 460px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .nav_list {
     list-style: none;
     display: inline-block;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 400;
-    color: rgb(0, 0, 0);
+    color: #000000;
     font-weight: 600;
     cursor: pointer;
     font-family: 'Cormorant', serif;
@@ -108,23 +109,22 @@
 }
 
 .hamburger_wrapper {
-    width: 30px;
-    height: 20px;
+    width: 60px;
+    height: 30px;
     position: absolute;
-    left: 30px;
-    top: 20px;
+    left: 10px;
+    top: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     display: none;
-    cursor: pointer;
 }
 
-.hamburger {
-    width: 100%;
-    height: 2px;
-    background-color: #000000;
+.mini_navbar_icon {
+    width: 30px;
+    font-size: 1.9rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
@@ -157,8 +157,7 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 60px;
-        background-color: transparent;
-        background-color: rgb(255, 255, 255);
+        background-color: var(--white);
         position: absolute;
         top: 60px;
         left: 0;
@@ -166,6 +165,7 @@
         transform: translateX(-360px);
         -webkit-box-shadow: 4px 13px 21px 2px rgba(0, 0, 0, 0.23);
         box-shadow: 4px 13px 21px 2px rgba(0, 0, 0, 0.23);
+        z-index: 50;
     }
     .open {
         transform: translateY(0px);
@@ -178,7 +178,7 @@
         justify-content: space-between;
         align-items: baseline;
         gap: 25px;
-        background-color: #ffffff;
+        background-color: var(--white);
     }
     .nav_list {
         list-style: none;

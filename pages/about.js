@@ -11,7 +11,7 @@ const about = () => {
         <link rel="shortcut icon" href="logo.ico" />
       </Head>
       <div className={style.main_container}>
-        <img src="/about_img2.jpg" className={style.img} />
+        <img src="/main_about.jpg" className={style.img} />
         <h1 className={style.title}>What is Jenn's Journey?</h1>
         <p className={style.text}>
           Hi friend! Thank you for being here. This is an

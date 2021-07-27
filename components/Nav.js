@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import style from "../styles/Nav.module.css";
 import Link from "next/link";
 import SocialIcon from "./SocialIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 const Nav = () => {
   const [show, setShow] = useState(false);
@@ -32,9 +35,14 @@ const Nav = () => {
           className={` ${style.show_mini_logo}`}
         />
         <div className={style.hamburger_wrapper} onClick={openNavMenu}>
-          <div className={style.hamburger}></div>
-          <div className={style.hamburger}></div>
-          <div className={style.hamburger}></div>
+          {openMenu ? (
+            <FontAwesomeIcon
+              icon={faTimesCircle}
+              className={style.mini_navbar_icon}
+            />
+          ) : (
+            <FontAwesomeIcon icon={faBars} className={style.mini_navbar_icon} />
+          )}
         </div>
 
         <nav className={`${style.nav}  ${openMenu && style.open}`}>
@@ -47,7 +55,7 @@ const Nav = () => {
 
             <Link href="/blogs">
               <li className={style.nav_list} onClick={openNavMenu}>
-                All Post
+                All Posts
               </li>
             </Link>
 

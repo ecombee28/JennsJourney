@@ -6,18 +6,18 @@ export default function useGetDate(date) {
   useEffect(() => {
     let year, day, month;
     const monthsArr = [
-      "January",
-      "February",
+      "Jan.",
+      "Feb.",
       "March",
       "April",
       "May",
       "June",
       "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "Aug.",
+      "Sept.",
+      "Oct.",
+      "Nov.",
+      "Dec.",
     ];
 
     year = date.substr(0, 4);

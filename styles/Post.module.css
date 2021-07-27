@@ -93,6 +93,19 @@
     font-family: 'Alegreya', serif;
 }
 
+.blog_container ol li {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    font-family: 'Alegreya', serif;
+}
+
+.blog_container ul li {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-family: 'Alegreya', serif;
+}
+
 .blog_container h1 {
     font-size: 4rem;
 }
@@ -149,7 +162,7 @@
         font-size: 2.5rem;
     }
     .landing_image {
-        width: 100%;
+        width: 90%;
         object-fit: cover;
         margin-top: 20px;
     }
@@ -195,7 +208,10 @@
     }
 }
 
-@media screen and (max-width:780px) {
+@media screen and (max-width:480px) {
+    .share {
+        justify-content: center;
+    }
     .title {
         font-size: 1.7rem;
     }

@@ -5,6 +5,7 @@ import useReadTime from "../customHooks/useReadTime";
 import useGetDate from "../customHooks/useGetDate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import Date from "./Date";
 
 const BlogPreview = ({ blog, commentCount, likeCount }) => {
   const { readTime } = useReadTime(blog);
@@ -21,6 +22,8 @@ const BlogPreview = ({ blog, commentCount, likeCount }) => {
     likes ? setLikesCounts(likes.number_of_likes) : setLikesCounts(0);
   }, [blog]);
 
+  console.log(likeCount);
+
   return (
     <>
       <Link href={`/post/${blog.slug.current}`}>
@@ -31,7 +34,9 @@ const BlogPreview = ({ blog, commentCount, likeCount }) => {
 
           <section className={style.bottom_half_wrapper}>
             <div className={style.date_container}>
-              <li className={style.list}>{`${date}`}</li>
+              <li className={style.list}>
+                <Date date={blog.publishedAt} />
+              </li>
               <li className={`${style.list} ${style.divider}`}>|</li>
               <li className={style.list}>{`${readTime} min read `}</li>
               <li className={`${style.list} ${style.divider}`}>|</li>

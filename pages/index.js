@@ -29,6 +29,15 @@ export default function Home({
       </Head>
       <div className={style.recent_blogs_container}>
         <img src="/landing_image.jpg" className={style.img} />
+        <div className={style.landing_img_text}>
+          <p>
+            <span>Welcome!</span> <br />
+            <br />
+            Jenn’s journey is about my favorite topics which includes raising
+            children with autism, managing stress, saving money, career joy and
+            more!
+          </p>
+        </div>
       </div>
 
       <main className={style.main_content}>

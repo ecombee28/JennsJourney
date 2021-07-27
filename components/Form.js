@@ -5,7 +5,7 @@ import { Picker } from "emoji-mart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSmile } from "@fortawesome/free-regular-svg-icons";
 
-export default function Form({ onsubmit }) {
+export default function Form({ onsubmit, commentType }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [nameError, setNameError] = useState(false);
@@ -31,7 +31,12 @@ export default function Form({ onsubmit }) {
     setNameError(false);
     setCommentError(false);
     if (name && comment) {
-      onsubmit(name, comment);
+      if (commentType === "replay") {
+        onsubmit(name, comment);
+      } else {
+        onsubmit(0, name, comment, "comment");
+      }
+
       setName("");
       setComment("");
     } else {
@@ -72,8 +77,6 @@ export default function Form({ onsubmit }) {
           className={style.input}
           value={name}
           onChange={checkName}
-          placeholder="Name"
-          required
         />
       </div>
       <div className={style.input_wrapper}>
@@ -106,8 +109,6 @@ export default function Form({ onsubmit }) {
           className={`${style.input} ${style.comment}`}
           value={comment}
           onChange={checkComment}
-          placeholder="Comment"
-          required
         />
       </div>
       <button className={style.btn} onClick={submit}>
