@@ -4,7 +4,7 @@
     margin: auto;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
 }
@@ -23,13 +23,14 @@
 .thankyou_message {
     width: 100px;
     height: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--blue);
     position: absolute;
     right: 55px;
     bottom: 40px;
     border-radius: 10px;
     text-align: center;
     padding: 2px;
+    visibility: hidden;
 }
 
 .thankyou_message p {
@@ -77,31 +78,6 @@
     cursor: unset;
 }
 
-.tooltip {
-    visibility: hidden;
-    background-color: var(--blue);
-    color: #fff;
-    font-size: .2rem;
-    padding: 1px 2px;
-    text-align: center;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    top: 33px;
-    left: 85px;
-}
-
-.tooltip::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent var(--blue) transparent;
-}
-
 .icon:hover .tooltip {
     visibility: visible;
 }
@@ -109,4 +85,10 @@
 .count {
     color: rgb(8, 8, 8);
     font-size: .9rem;
+}
+
+@media screen and (max-width: 480px) {
+    .thankyou_message p {
+        font-size: .8rem;
+    }
 }
