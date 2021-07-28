@@ -17,11 +17,11 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;
+    border-color: var(--blue) transparent transparent transparent;
 }
 
 .thankyou_message {
-    width: 100px;
+    width: 150px;
     height: auto;
     background-color: var(--blue);
     position: absolute;
