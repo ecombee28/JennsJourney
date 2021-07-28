@@ -51,27 +51,34 @@ const EachComment = ({ comment, commentId, onsubmit, reply }) => {
         </li>
       </div>
       <div className={style.reply_wrapper}>
-        <p
-          className={style.reply_text}
-          onClick={() => setShowReplies(!showReplies)}
-        >
-          Replies({replyById.length})
+        <div className={style.reply_holder}>
+          <p
+            className={style.reply_text}
+            onClick={() => setShowReplies(!showReplies)}
+          >
+            Replies({replyById.length})
+          </p>
           {showReplies ? (
             <FontAwesomeIcon
               icon={faSortUp}
               className={`${style.icon} ${style.up}`}
             />
           ) : (
-            <FontAwesomeIcon icon={faSortDown} className={`${style.icon}`} />
+            <FontAwesomeIcon
+              icon={faSortDown}
+              className={`${style.icon} ${style.down}`}
+            />
           )}
-        </p>
-        <p className={style.reply_text} onClick={() => setReplay(!replay)}>
-          Reply
-        </p>
-        <FontAwesomeIcon
-          icon={faShare}
-          className={`${style.icon} ${style.share}`}
-        />
+        </div>
+        <div className={style.reply_holder}>
+          <p className={style.reply_text} onClick={() => setReplay(!replay)}>
+            Reply
+          </p>
+          <FontAwesomeIcon
+            icon={faShare}
+            className={`${style.icon} ${style.share}`}
+          />
+        </div>
       </div>
 
       {showReplies &&

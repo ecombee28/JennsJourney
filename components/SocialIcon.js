@@ -11,7 +11,10 @@ import style from "../styles/SocialIcon.module.css";
 const SocialIcon = ({ position }) => {
   return (
     <>
-      <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
+      <a
+        href="https://www.facebook.com/Jenns-Journey-105553521791785"
+        target="_blank"
+      >
         <li className={style.icon_list}>
           <FontAwesomeIcon
             icon={faFacebook}
@@ -33,7 +36,7 @@ const SocialIcon = ({ position }) => {
         </li>
       </a>
 
-      <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
+      <a href="https://www.pinterest.com/jennsjourney2021" target="_blank">
         <li className={style.icon_list}>
           <FontAwesomeIcon
             icon={faPinterest}

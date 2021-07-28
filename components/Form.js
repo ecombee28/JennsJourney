@@ -112,7 +112,7 @@ export default function Form({ onsubmit, commentType }) {
         />
       </div>
       <button className={style.btn} onClick={submit}>
-        Post Comment
+        {commentType === "comment" ? "Post Comment" : "Post Replay"}
       </button>
     </div>
   );
