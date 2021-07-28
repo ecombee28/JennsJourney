@@ -1,5 +1,6 @@
 .main_container {
     width: 100%;
+    position: relative;
 }
 
 .selector_container {
@@ -52,6 +53,20 @@
     margin-top: 70px;
 }
 
+.more_post_btn {
+    padding: 7px 20px;
+    font-size: clamp(1.2rem, 1.3vw, 1.4vw);
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-top: 70px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    background-color: var(--blue);
+}
+
 @media screen and (max-width: 900px) {
     .main_container {
         width: 100%;
@@ -72,7 +87,7 @@
 
 @media screen and (max-width: 900px) {
     .blog_container {
-        justify-content: center;
+        justify-content: flex-start;
         gap: 50px;
     }
 }
@@ -85,7 +100,7 @@
         gap: 15px;
     }
     .selections {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-family: 700;
         cursor: pointer;
     }

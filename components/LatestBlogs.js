@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import style from "../styles/LatestBlogs.module.css";
 import BlogPreview from "./BlogPreview";
@@ -97,6 +98,9 @@ const BlogSearch = ({
           ))
         )}
       </div>
+      <Link href="/blogs">
+        <button className={style.more_post_btn}>See all post</button>
+      </Link>
     </div>
   );
 };

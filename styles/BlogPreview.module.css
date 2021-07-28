@@ -86,6 +86,7 @@
     font-size: 1.7rem;
     font-weight: 400;
     color: #000;
+    margin-top: 20px;
 }
 
 .date_container {
@@ -98,7 +99,7 @@
 
 .list {
     list-style: none;
-    font-size: clamp(.8rem, .7vw, .7vw);
+    font-size: clamp(.7rem, .8vw, .8vw);
     font-weight: 600;
     color: #000000;
 }
@@ -135,9 +136,6 @@
         max-width: 380px;
         width: 45%;
     }
-    .list {
-        font-size: .7rem;
-    }
 }
 
 @media screen and (max-width: 900px) {
@@ -145,16 +143,13 @@
         min-width: 300px;
         max-width: 380px;
     }
-    .list {
-        font-size: .6rem;
-    }
 }
 
 @media screen and (max-width: 480px) {
     .main_container {
         width: 300px;
     }
-    .list {
-        font-size: .6rem;
+    .title {
+        font-size: 1.2rem;
     }
 }

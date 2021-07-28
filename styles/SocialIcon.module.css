@@ -12,8 +12,12 @@
     margin: auto;
 }
 
-.white {
+.footer {
     color: #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    margin: auto;
 }
 
 .facebook:hover {
@@ -30,4 +34,12 @@
 
 .pintrest:hover {
     color: var(--pintrest)
+}
+
+@media screen and (min-width:480px) {
+    .footer {
+        width: 20px;
+        height: 20px;
+        font-size: 1rem;
+    }
 }
