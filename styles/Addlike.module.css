@@ -17,20 +17,21 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: var(--blue) transparent transparent transparent;
+    border-color: var(--like) transparent transparent transparent;
 }
 
 .thankyou_message {
-    width: 150px;
+    width: 100px;
     height: auto;
-    background-color: var(--blue);
+    background-color: var(--like);
     position: absolute;
-    right: 55px;
+    right: 15px;
     bottom: 40px;
     border-radius: 10px;
     text-align: center;
     padding: 2px;
-    visibility: hidden;
+    font-size: 1rem;
+    color: #fff;
 }
 
 .thankyou_message p {

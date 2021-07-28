@@ -33,7 +33,7 @@ const AddLike = ({ slug, likeCount }) => {
   return (
     <div className={style.main_wrapper}>
       <div className={`${style.thankyou_message} ${thankYou && style.show}`}>
-        <p>Thank You!</p>
+        Thank You!
       </div>
       <div className={style.heart_wrapper}>
         <FontAwesomeIcon
