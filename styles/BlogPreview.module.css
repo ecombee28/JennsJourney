@@ -152,4 +152,7 @@
     .title {
         font-size: 1.2rem;
     }
+    .date_container {
+        gap: 5px;
+    }
 }

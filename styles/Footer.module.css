@@ -3,6 +3,7 @@
     height: 70px;
     background-color: var(--footerBlue);
     margin-top: auto;
+    position: relative;
 }
 
 .nav_list {
@@ -42,8 +43,16 @@
     transform: translateX(-50%);
 }
 
-@media screen and (min-width:480px) {
+@media screen and (max-width:480px) {
     .social_media {
-        width: 120px;
+        width: 160px;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        right: 50%;
+        top: 15px;
+        transform: translateX(50%);
     }
 }
