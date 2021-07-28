@@ -40,7 +40,7 @@
 }
 
 .comment {
-    width: 70%;
+    width: 90%;
     height: 100px;
     resize: none;
     padding: 15px;
@@ -99,35 +99,26 @@
     visibility: visible;
 }
 
+@media screen and (max-width: 780px) {
+    .main_container {
+        width: 95%;
+        margin-top: 80px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .main_container {
         width: 95%;
-        height: auto;
-        margin: auto;
         margin-top: 80px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 20px;
-        font-family: 'Alegreya', serif;
     }
     .label {
         font-size: 1.2rem;
-        color: #000;
     }
     .input {
-        height: 40px;
         width: 60%;
         padding-left: 15px;
         padding-right: 20px;
-        -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
-        outline: none;
-        border: none;
-        border: 1px solid rgba(0, 0, 0, 0.2);
         font-size: 1.2rem;
-        font-weight: 400;
     }
     .comment {
         width: 80%;

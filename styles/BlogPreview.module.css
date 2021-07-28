@@ -1,5 +1,5 @@
 .main_container {
-    min-width: 350px;
+    min-width: 360px;
     max-width: 430px;
     width: 40%;
     height: 550px;
@@ -130,6 +130,7 @@
     color: var(--like);
 }
 
+/* 
 @media screen and (max-width: 1100px) {
     .main_container {
         min-width: 330px;
@@ -143,11 +144,12 @@
         min-width: 300px;
         max-width: 380px;
     }
-}
+} */
 
 @media screen and (max-width: 480px) {
     .main_container {
-        width: 300px;
+        min-width: 300px;
+        max-width: 380px;
     }
     .title {
         font-size: 1.2rem;
