@@ -4,7 +4,7 @@ import SocialIcon from "./SocialIcon";
 
 const Footer = () => {
   return (
-    <div className={style.footer}>
+    <footer className={style.footer}>
       <a
         href="https://www.combeecreation.com/"
         target="_blank"
@@ -16,7 +16,7 @@ const Footer = () => {
       <div className={style.social_media}>
         <SocialIcon position={"footer"} />
       </div>
-    </div>
+    </footer>
   );
 };
 

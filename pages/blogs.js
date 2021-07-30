@@ -58,45 +58,86 @@ const blogs = ({
   }, [query]);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Blogs | Jenns Journey</title>
         <meta name="keywords" content="web dev" />
         <link rel="shortcut icon" href="logo.ico" />
       </Head>
-      <h1 className={style.title}>Blogs</h1>
-      <section className={style.selector_container}>
-        <p
-          className={`${style.selections} ${allPost && style.selected}`}
-          onClick={() => setQuery("allpost")}
-        >
-          All Posts
-        </p>
-        <p
-          className={`${style.selections} ${life && style.selected}`}
-          onClick={() => setQuery("life")}
-        >
-          Life
-        </p>
-        <p
-          className={`${style.selections} ${motherHood && style.selected}`}
-          onClick={() => setQuery("mother")}
-        >
-          Motherhood
-        </p>
-        <p
-          className={`${style.selections} ${special && style.selected}`}
-          onClick={() => setQuery("special")}
-        >
-          Special Needs
-        </p>
-      </section>
+
       <div className={style.main_container}>
-        {query === "allpost" ? (
-          allMappedPost.mappedPost.length == 0 ? (
+        <h1 className={style.title}>Blogs</h1>
+
+        <section className={style.selector_container}>
+          <p
+            className={`${style.selections} ${allPost && style.selected}`}
+            onClick={() => setQuery("allpost")}
+          >
+            All Posts
+          </p>
+          <p
+            className={`${style.selections} ${life && style.selected}`}
+            onClick={() => setQuery("life")}
+          >
+            Life
+          </p>
+          <p
+            className={`${style.selections} ${motherHood && style.selected}`}
+            onClick={() => setQuery("mother")}
+          >
+            Motherhood
+          </p>
+          <p
+            className={`${style.selections} ${special && style.selected}`}
+            onClick={() => setQuery("special")}
+          >
+            Special Needs
+          </p>
+        </section>
+        <div className={style.blog_container}>
+          {query === "allpost" ? (
+            allMappedPost.mappedPost.length == 0 ? (
+              <NoPostFound />
+            ) : (
+              allMappedPost.mappedPost.map((p, i) => (
+                <BlogPreview
+                  key={i}
+                  blog={p}
+                  likeCount={likeCount}
+                  commentCount={commentCount}
+                />
+              ))
+            )
+          ) : query === "life" ? (
+            allLifePost.mappedPost.length == 0 ? (
+              <NoPostFound />
+            ) : (
+              allLifePost.mappedPost.map((p, i) => (
+                <BlogPreview
+                  key={i}
+                  blog={p}
+                  likeCount={likeCount}
+                  commentCount={commentCount}
+                />
+              ))
+            )
+          ) : query === "mother" ? (
+            allMotherPost.mappedPost.length == 0 ? (
+              <NoPostFound />
+            ) : (
+              allMotherPost.mappedPost.map((p, i) => (
+                <BlogPreview
+                  key={i}
+                  blog={p}
+                  likeCount={likeCount}
+                  commentCount={commentCount}
+                />
+              ))
+            )
+          ) : allSpecialPost.mappedPost.length == 0 ? (
             <NoPostFound />
           ) : (
-            allMappedPost.mappedPost.map((p, i) => (
+            allSpecialPost.mappedPost.map((p, i) => (
               <BlogPreview
                 key={i}
                 blog={p}
@@ -104,47 +145,10 @@ const blogs = ({
                 commentCount={commentCount}
               />
             ))
-          )
-        ) : query === "life" ? (
-          allLifePost.mappedPost.length == 0 ? (
-            <NoPostFound />
-          ) : (
-            allLifePost.mappedPost.map((p, i) => (
-              <BlogPreview
-                key={i}
-                blog={p}
-                likeCount={likeCount}
-                commentCount={commentCount}
-              />
-            ))
-          )
-        ) : query === "mother" ? (
-          allMotherPost.mappedPost.length == 0 ? (
-            <NoPostFound />
-          ) : (
-            allMotherPost.mappedPost.map((p, i) => (
-              <BlogPreview
-                key={i}
-                blog={p}
-                likeCount={likeCount}
-                commentCount={commentCount}
-              />
-            ))
-          )
-        ) : allSpecialPost.mappedPost.length == 0 ? (
-          <NoPostFound />
-        ) : (
-          allSpecialPost.mappedPost.map((p, i) => (
-            <BlogPreview
-              key={i}
-              blog={p}
-              likeCount={likeCount}
-              commentCount={commentCount}
-            />
-          ))
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

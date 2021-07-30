@@ -134,6 +134,19 @@
   }
 }
 
+@media screen and (max-width:580px) and (orientation:portrait) {
+  .main_content {
+    width: 85%;
+    min-height: 300px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .main_content {
     width: 95%;

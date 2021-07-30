@@ -85,12 +85,28 @@
     }
 }
 
-@media screen and (max-width: 740px) {
+/*  media query for ipad*/
+
+@media screen and (max-width: 1040px) and (orientation:landscape) {
+    .blog_container {
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/*  media query for ipad portrait*/
+
+@media screen and (max-width: 780px) and (orientation:portrait) {
     .blog_container {
         width: 80%;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        margin: auto;
+    }
+    .selector_container {
+        width: 80%;
+        margin: auto;
     }
 }
 

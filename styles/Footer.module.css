@@ -4,6 +4,8 @@
     background-color: var(--footerBlue);
     margin-top: auto;
     position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 .nav_list {

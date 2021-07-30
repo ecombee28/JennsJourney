@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import style from "../styles/Nav.module.css";
 import Link from "next/link";
 import SocialIcon from "./SocialIcon";
@@ -9,6 +9,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 const Nav = () => {
   const [show, setShow] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const node = useRef();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -45,7 +46,7 @@ const Nav = () => {
           )}
         </div>
 
-        <nav className={`${style.nav}  ${openMenu && style.open}`}>
+        <nav className={`${style.nav}  ${openMenu && style.open}`} ref={node}>
           <div className={style.nav_link_container}>
             <Link href="/">
               <li className={style.nav_list} onClick={openNavMenu}>

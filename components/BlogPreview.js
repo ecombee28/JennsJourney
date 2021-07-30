@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import style from "../styles/BlogPreview.module.css";
 import Link from "next/link";
 import useReadTime from "../customHooks/useReadTime";
-import useGetDate from "../customHooks/useGetDate";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Date from "./Date";
 
 const BlogPreview = ({ blog, commentCount, likeCount }) => {
   const { readTime } = useReadTime(blog);
-  const { date } = useGetDate(blog.publishedAt);
   const [commentCounts, setCommentCounts] = useState(0);
   const [likesCounts, setLikesCounts] = useState(0);
 
@@ -21,8 +20,6 @@ const BlogPreview = ({ blog, commentCount, likeCount }) => {
     const likes = likeCount.find((l) => l.slug === blog.slug.current);
     likes ? setLikesCounts(likes.number_of_likes) : setLikesCounts(0);
   }, [blog]);
-
-  console.log(likeCount);
 
   return (
     <>
