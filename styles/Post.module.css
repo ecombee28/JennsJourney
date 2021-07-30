@@ -157,7 +157,7 @@
     align-items: baseline;
 }
 
-@media screen and (max-width:780px) {
+@media screen and (max-width:980px) {
     .title {
         font-size: 2.5rem;
     }
