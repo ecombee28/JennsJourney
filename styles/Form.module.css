@@ -99,7 +99,7 @@
     visibility: visible;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 810px) {
     .main_container {
         width: 95%;
         margin-top: 80px;
