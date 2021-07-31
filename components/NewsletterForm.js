@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "../styles/Newsletter.module.css";
 
 const NewsletterForm = ({ status, message, onValidated, position }) => {
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState("");
   const [feedBackMsg, setFeedBackMsg] = useState(null);
 
   const addEmail = (e) => {

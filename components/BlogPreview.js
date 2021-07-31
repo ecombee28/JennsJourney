@@ -14,7 +14,7 @@ const BlogPreview = ({ blog, commentCount, likeCount }) => {
 
   // this will get and set the state of the commentCount and likeCount
   useEffect(() => {
-    if (likeCount > 0) {
+    if (likeCount != 0) {
       const comment = commentCount.find((e) => e.slug === blog.slug.current);
       comment ? setCommentCounts(comment.count) : setCommentCounts(0);
 
