@@ -25,7 +25,7 @@ const SocialIcon = ({ position }) => {
         </li>
       </a>
 
-      <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
+      <a href="https://twitter.com/JennsJourney21" target="_blank">
         <li className={style.icon_list}>
           <FontAwesomeIcon
             icon={faTwitter}
@@ -49,7 +49,7 @@ const SocialIcon = ({ position }) => {
         </li>
       </a>
 
-      <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
+      {/* <a href="https://www.facebook.com/jennifer.combee.5" target="_blank">
         <li className={style.icon_list}>
           <FontAwesomeIcon
             icon={faInstagram}
@@ -60,7 +60,7 @@ const SocialIcon = ({ position }) => {
             `}
           />
         </li>
-      </a>
+      </a>  */}
     </>
   );
 };

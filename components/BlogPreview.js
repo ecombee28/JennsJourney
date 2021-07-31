@@ -14,11 +14,13 @@ const BlogPreview = ({ blog, commentCount, likeCount }) => {
 
   // this will get and set the state of the commentCount and likeCount
   useEffect(() => {
-    const comment = commentCount.find((e) => e.slug === blog.slug.current);
-    comment ? setCommentCounts(comment.count) : setCommentCounts(0);
+    if (likeCount > 0) {
+      const comment = commentCount.find((e) => e.slug === blog.slug.current);
+      comment ? setCommentCounts(comment.count) : setCommentCounts(0);
 
-    const likes = likeCount.find((l) => l.slug === blog.slug.current);
-    likes ? setLikesCounts(likes.number_of_likes) : setLikesCounts(0);
+      const likes = likeCount.find((l) => l.slug === blog.slug.current);
+      likes ? setLikesCounts(likes.number_of_likes) : setLikesCounts(0);
+    }
   }, [blog]);
 
   return (

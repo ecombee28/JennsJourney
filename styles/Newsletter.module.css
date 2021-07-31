@@ -31,11 +31,12 @@
 
 .footer_input {
     height: 30px;
+    width: 250px;
 }
 
 .submit_btn {
     padding: 5px 20px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--white);
     border-radius: 10px;
     font-weight: 500;

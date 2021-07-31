@@ -7,6 +7,7 @@ const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className={style.signup_wrapper}>
+        <p>Newsletter</p>
         <NewsletterSignup position="footer" />
       </div>
 
