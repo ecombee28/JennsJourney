@@ -82,6 +82,7 @@
     .signup_wrapper {
         width: 90%;
         height: 90%;
+        align-items: center;
     }
     .social_media {
         width: 90%;
