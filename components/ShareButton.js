@@ -17,10 +17,15 @@ const myStyle = {
   margin: "auto",
 };
 
+const shadowStyle = {
+  WebkitBoxShadow: "none",
+  boxShadow: "none",
+};
+
 const ShareButtons = ({ title, url, twitterHandle, tags }) => {
   return (
     <div style={myStyle}>
-      <FacebookShareButton url={url}>
+      <FacebookShareButton url={url} style={shadowStyle}>
         <FacebookIcon size={40} round={true} />
       </FacebookShareButton>
 
@@ -29,13 +34,10 @@ const ShareButtons = ({ title, url, twitterHandle, tags }) => {
         title={title}
         via={twitterHandle}
         hashtags={tags}
+        style={shadowStyle}
       >
         <TwitterIcon size={40} round={true} />
       </TwitterShareButton>
-
-      <PinterestShareButton url={url}>
-        <PinterestIcon size={40} round={true} />
-      </PinterestShareButton>
     </div>
   );
 };

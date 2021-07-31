@@ -1,5 +1,5 @@
 .main_container {
-    width: 70%;
+    width: 90%;
     height: auto;
     margin-top: 80px;
     display: flex;
@@ -11,7 +11,7 @@
 }
 
 .input_wrapper {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -27,7 +27,7 @@
 
 .input {
     height: 40px;
-    width: 50%;
+    width: 45%;
     padding-left: 15px;
     padding-right: 20px;
     -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
@@ -40,7 +40,7 @@
 }
 
 .comment {
-    width: 70%;
+    width: 60%;
     height: 110px;
     resize: none;
     padding: 15px;
@@ -100,10 +100,10 @@
 }
 
 @media screen and (max-width: 810px) {
-    .main_container {
+    /* .main_container {
         width: 80%;
         margin-top: 80px;
-    }
+    } */
 }
 
 @media screen and (max-width: 480px) {

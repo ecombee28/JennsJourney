@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import style from "../../styles/Post.module.css";
 import BlockContent from "@sanity/block-content-to-react";
@@ -11,12 +11,24 @@ import AddLike from "../../components/AddLike";
 import Date from "../../components/Date";
 
 const Post = ({ post, likeCrt }) => {
-  const twitterHandle = "jenn";
-  const url = "https://www.facebook.com/jennifer.combee.5";
+  const [hashTags, setHashTags] = useState([]);
+  const twitterHandle = "@JennsJourney21";
+  const url = `https://jennsjourney.net/post/${post.slug.current}`;
   const title = post.title;
   const tags = ["#Vacations", "#Life"];
   const { readTime } = useReadTime(post);
   const { imageUrl } = useImageBuilder(post);
+
+  useEffect(() => {
+    const generateHasTags = () => {
+      post.categories.map((c) => {
+        const tag = `#${c.title}`;
+        setHashTags(...hashTags, tag);
+      });
+    };
+
+    generateHasTags();
+  }, [post]);
 
   return (
     <>

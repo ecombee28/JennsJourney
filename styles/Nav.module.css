@@ -31,7 +31,7 @@
 }
 
 .nav_link_container {
-    width: 460px;
+    width: 350px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -206,8 +206,8 @@
         display: block;
         margin-left: 50%;
         transform: translateX(-50%);
-        margin-top: 10px;
-        width: 170px;
+        margin-top: 0px;
+        width: 200px;
         object-fit: contain;
     }
 }

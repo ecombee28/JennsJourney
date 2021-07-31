@@ -29,8 +29,8 @@ a {
 }
 
 :root {
-  --blue: #2c82d3;
-  --footerBlue: #334f7e;
+  --blue: #1f8dac;
+  --footerBlue: #5e8691;
   --white: #ffffff;
   --facebook: #4267B2;
   --twitter: #1DA1F2;
@@ -44,4 +44,13 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+::placeholder {
+  color: rgb(177, 177, 177);
+}
+
+input, button {
+  -webkit-box-shadow: 2px 2px 9px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 9px 1px rgba(0, 0, 0, 0.2);
 }

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import style from "../styles/Home.module.css";
 import LatestBlogs from "../components/LatestBlogs.js";
 import useMapPost from "../customHooks/useMapPost";
+import NewsletterSignup from "../components/NewsletterSignup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import {
   getAllCommentCounts,
   getAllLikeCounts,
@@ -28,7 +31,7 @@ export default function Home({
         <link rel="shortcut icon" href="logo.ico" />
       </Head>
       <div className={style.recent_blogs_container}>
-        <img src="/landing_image.jpg" className={style.img} />
+        <img src="/ee.jpg" className={style.img} />
         <div className={style.landing_img_text}>
           <p>
             <span>Welcome!</span> <br />
@@ -50,6 +53,15 @@ export default function Home({
           allMotherPost={allMotherPost}
         />
       </main>
+      <div className={style.newsletter_container}>
+        <FontAwesomeIcon icon={faPaperPlane} className={style.icon} />
+        <p className={style.newsletter_body_message}>
+          Stay up to date with the latest post and more.
+        </p>
+        <div className={style.newsletter_wrapper}>
+          <NewsletterSignup position="body" />
+        </div>
+      </div>
     </div>
   );
 }

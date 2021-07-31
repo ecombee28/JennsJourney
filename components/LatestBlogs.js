@@ -11,7 +11,7 @@ const BlogSearch = ({
   allSpecialPost,
   allMotherPost,
 }) => {
-  const [query, setQuery] = useState("life");
+  const [query, setQuery] = useState("mother");
   const [life, setLife] = useState(true);
   const [motherHood, setMotherHood] = useState(false);
   const [special, setSpecial] = useState(false);
@@ -40,12 +40,6 @@ const BlogSearch = ({
     <div className={style.main_container}>
       <section className={style.selector_container}>
         <p
-          className={`${style.selections} ${life && style.selected}`}
-          onClick={() => setQuery("life")}
-        >
-          Life
-        </p>
-        <p
           className={`${style.selections} ${motherHood && style.selected}`}
           onClick={() => setQuery("mother")}
         >
@@ -56,6 +50,12 @@ const BlogSearch = ({
           onClick={() => setQuery("special")}
         >
           Special Needs
+        </p>
+        <p
+          className={`${style.selections} ${life && style.selected}`}
+          onClick={() => setQuery("life")}
+        >
+          Life
         </p>
       </section>
       <div className={style.blog_container}>

@@ -28,7 +28,7 @@ const Nav = () => {
   return (
     <>
       <div className={style.landing_image_container}>
-        <img src="/logo1.png" className={style.main_logo} />
+        <img src="/main-logo.png" className={style.main_logo} />
       </div>
       <div className={style.header}>
         <img
@@ -66,11 +66,11 @@ const Nav = () => {
               </li>
             </Link>
 
-            <Link href="/contact">
+            {/* <Link href="/contact">
               <li className={style.nav_list} onClick={openNavMenu}>
                 Contact
               </li>
-            </Link>
+            </Link> */}
           </div>
           <img
             src="/mini_header_logo.png"
