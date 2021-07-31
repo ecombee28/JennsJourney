@@ -1,5 +1,5 @@
 .main_wrapper {
-    width: 160px;
+    width: 250px;
     height: 40px;
     margin: auto;
     position: relative;
@@ -7,6 +7,7 @@
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
+    margin-left: 60px;
 }
 
 .thankyou_message::after {
@@ -25,7 +26,7 @@
     height: auto;
     background-color: var(--like);
     position: absolute;
-    right: 15px;
+    left: 29px;
     bottom: 40px;
     border-radius: 10px;
     text-align: center;
@@ -59,11 +60,11 @@
 }
 
 .heart_wrapper {
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .icon {
@@ -90,7 +91,15 @@
 }
 
 @media screen and (max-width: 480px) {
+    .heart_wrapper {
+        justify-content: center;
+        align-items: center;
+    }
     .thankyou_message p {
         font-size: .8rem;
+    }
+    .thankyou_message {
+        left: -2px;
+        bottom: 40px;
     }
 }

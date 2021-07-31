@@ -150,7 +150,7 @@
 }
 
 .heart_container {
-    float: left;
+    height: auto;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -229,5 +229,11 @@
     }
     .blog_container ol li, .blog_container ul li {
         margin-left: 40px;
+    }
+    .heart_container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

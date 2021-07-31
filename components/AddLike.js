@@ -42,7 +42,7 @@ const AddLike = ({ slug, likeCount }) => {
           onClick={liked}
         />
         <p className={style.count} onClick={liked}>
-          {`${numberOfLikes}`}
+          {`${numberOfLikes} loved this post`}
         </p>
       </div>
     </div>
