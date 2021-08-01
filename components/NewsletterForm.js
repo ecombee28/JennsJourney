@@ -10,7 +10,7 @@ const NewsletterForm = ({ status, message, onValidated, position }) => {
   };
 
   const sendForm = async () => {
-    if (!email) {
+    if (email.length == 0) {
       setFeedBackMsg("You must enter in an email address");
     } else {
       const isFormValidated = await onValidated({ EMAIL: email });

@@ -2,7 +2,8 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import NewsletterForm from "./NewsletterForm";
 
 const NewsletterSignup = ({ position }) => {
-  const url = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
+  const url =
+    "https://gmail.us6.list-manage.com/subscribe/post?u=ec25c33408e7bd415d49f1473&amp;id=4ad28bd733";
 
   return (
     <div>
