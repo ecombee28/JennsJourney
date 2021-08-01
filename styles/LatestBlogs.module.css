@@ -1,6 +1,8 @@
 .main_container {
     width: 100%;
     position: relative;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgb(209, 209, 209);
 }
 
 .selector_container {
@@ -58,7 +60,6 @@
     padding: 7px 20px;
     font-size: clamp(1.2rem, 1.3vw, 1.4vw);
     color: var(--white);
-    border-radius: 10px;
     border: none;
     outline: none;
     margin-top: 70px;

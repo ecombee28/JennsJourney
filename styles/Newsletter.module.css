@@ -1,25 +1,26 @@
 .main_container {
-    width: 100%;
-    padding: 10px 2px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    margin-bottom: 30px;
 }
 
 .input_wrapper {
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .email_input {
-    height: 50px;
-    width: 300px;
+    height: 40px;
+    width: 67%;
     padding-left: 5px;
     padding-right: 5px;
     outline: none;
@@ -29,16 +30,11 @@
     color: #000;
 }
 
-.footer_input {
-    height: 30px;
-    width: 250px;
-}
-
 .submit_btn {
+    width: 35%;
     padding: 5px 20px;
     font-size: 1.6rem;
     color: var(--white);
-    border-radius: 10px;
     font-weight: 500;
     background-color: var(--blue);
     border: none;
@@ -46,15 +42,11 @@
     cursor: pointer;
 }
 
-.footer_btn {
-    font-size: clamp(1rem, 1vw, 1.1vw);
-}
-
 .message {
-    width: 100%;
+    width: 60%;
     height: 30px;
     font-size: 1.2rem;
-    color: #000;
+    color: var(--white);
     visibility: hidden;
 }
 
@@ -66,7 +58,25 @@
     color: var(--like);
 }
 
-@media screen and (max-width:480px) {
+.header_title {
+    font-size: 3rem;
+    color: var(--white);
+    font-family: 'Alegreya', serif;
+}
+
+.newsletter_title {
+    width: 80%;
+    font-size: 2.4rem;
+    color: var(--white);
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+@media screen and (max-width:800px) {
+    .main_container {
+        width: 100%;
+        margin-bottom: 0px;
+    }
     .input_wrapper {
         width: 100%;
         display: flex;
@@ -76,24 +86,59 @@
         gap: 20px;
     }
     .email_input {
-        height: 40px;
-        width: 100%;
-        font-size: 1.3rem;
-    }
-    .footer_input {
         height: 30px;
-        width: 200px;
+        width: 50%;
+        font-size: 1rem;
     }
     .submit_btn {
-        padding: 5px 20px;
-        font-size: 1.4rem;
-    }
-    .footer_btn {
-        font-size: clamp(1rem, 1vw, 1.1vw);
+        width: 30%;
+        padding: 5px 10px;
+        font-size: 1.1rem;
     }
     .message {
         width: 100%;
         font-size: 1.1rem;
         visibility: hidden;
+    }
+    .newsletter_title {
+        width: 100%;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width:580px) {
+    .main_container {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .input_wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+    .email_input {
+        height: 30px;
+        width: 70%;
+        font-size: 1rem;
+    }
+    .submit_btn {
+        width: 50%;
+        padding: 5px 10px;
+        font-size: 1.1rem;
+    }
+    .message {
+        width: 100%;
+        font-size: 1.1rem;
+        visibility: hidden;
+    }
+    .header_title {
+        font-size: 2rem;
+    }
+    .newsletter_title {
+        width: 100%;
+        font-size: 1.1rem;
     }
 }

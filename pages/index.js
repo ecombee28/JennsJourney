@@ -3,9 +3,7 @@ import Head from "next/head";
 import style from "../styles/Home.module.css";
 import LatestBlogs from "../components/LatestBlogs.js";
 import useMapPost from "../customHooks/useMapPost";
-import NewsletterSignup from "../components/NewsletterSignup";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import AboutComponent from "../components/AboutComponent";
 import {
   getAllCommentCounts,
   getAllLikeCounts,
@@ -52,16 +50,8 @@ export default function Home({
           allSpecialPost={allSpecialPost}
           allMotherPost={allMotherPost}
         />
+        <AboutComponent />
       </main>
-      <div className={style.newsletter_container}>
-        <FontAwesomeIcon icon={faPaperPlane} className={style.icon} />
-        <p className={style.newsletter_body_message}>
-          Stay up to date with the latest post and more.
-        </p>
-        <div className={style.newsletter_wrapper}>
-          <NewsletterSignup position="body" />
-        </div>
-      </div>
     </div>
   );
 }
