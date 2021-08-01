@@ -5,7 +5,7 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 const NewsletterForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("");
-  const [feedBackMsg, setFeedBackMsg] = useState(null);
+  const [feedBackMsg, setFeedBackMsg] = useState(message);
 
   const addEmail = (e) => {
     setEmail(e.target.value);
@@ -16,16 +16,14 @@ const NewsletterForm = ({ status, message, onValidated }) => {
       setFeedBackMsg("You must enter in an email address");
     } else {
       const isFormValidated = await onValidated({ EMAIL: email });
-      isFormValidated && setEmail("");
     }
   };
 
   const clearMessage = () => {
-    if (feedBackMsg) {
-      setInterval(() => {
-        setFeedBackMsg("");
-      }, 10000);
-    }
+    setEmail("");
+    setTimeout(() => {
+      setFeedBackMsg("");
+    }, 7000);
   };
 
   useEffect(() => {
@@ -39,6 +37,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
         setFeedBackMsg(message);
       }
     } else {
+      clearMessage();
       setFeedBackMsg(message);
     }
   }, [message]);

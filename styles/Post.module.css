@@ -63,6 +63,16 @@
     margin-top: 20px;
 }
 
+.main_img_link {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.main_img_link a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .blog_container {
     width: 65%;
     max-width: 1300px;
@@ -225,7 +235,7 @@
         font-size: .8rem;
     }
     .blog_container h4 {
-        font-size: 5rem;
+        font-size: .5rem;
     }
     .blog_container ol li, .blog_container ul li {
         margin-left: 40px;
@@ -235,5 +245,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .main_img_link {
+        font-size: .7rem;
     }
 }

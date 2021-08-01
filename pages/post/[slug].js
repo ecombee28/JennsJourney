@@ -12,12 +12,17 @@ import Date from "../../components/Date";
 
 const Post = ({ post, likeCrt }) => {
   const [hashTags, setHashTags] = useState([]);
+  const [photoLink, setPhotoLink] = useState(null);
+  const [photoName, setPhotoName] = useState(null);
+  const [unsplashHref, setUnsplashHref] = useState(null);
   const twitterHandle = "@JennsJourney21";
   const url = `https://jennsjourney.net/post/${post.slug.current}`;
   const title = post.title;
   const tags = ["#Vacations", "#Life"];
   const { readTime } = useReadTime(post);
   const { imageUrl } = useImageBuilder(post);
+
+  const p = photoLink;
 
   useEffect(() => {
     const generateHasTags = () => {
@@ -28,6 +33,30 @@ const Post = ({ post, likeCrt }) => {
     };
 
     generateHasTags();
+  }, [post]);
+
+  useEffect(() => {
+    const getHyperlink = () => {
+      const hyperlink = post.mainImage_ref.split(" ");
+      const photographersLink = hyperlink[3].substr(
+        6,
+        hyperlink[3].indexOf(">") - 7
+      );
+
+      const firstName = hyperlink[3].substr(hyperlink[3].indexOf(">") + 1);
+      const lastName = hyperlink[4].substr(0, hyperlink[4].indexOf("<"));
+      const name = `${firstName} ${lastName}`;
+      const unsplashHref = hyperlink[7].substr(
+        6,
+        hyperlink[7].indexOf(">") - 7
+      );
+
+      setPhotoName(name);
+      setPhotoLink(photographersLink);
+      setUnsplashHref(unsplashHref);
+    };
+
+    post.mainImage_ref && getHyperlink();
   }, [post]);
 
   return (
@@ -46,8 +75,21 @@ const Post = ({ post, likeCrt }) => {
           <p className={style.date}>|</p>
           <p className={style.date}>{`${readTime} min read`}</p>
         </div>
-
         <img src={imageUrl} className={style.landing_image} />
+        {photoLink && (
+          <figcaption className={style.main_img_link}>
+            Photo by
+            <a href={photoLink} target="_blank">
+              {` ${photoName} `}
+            </a>
+            on
+            <a href={unsplashHref} target="_blank">
+              {" "}
+              Unsplash
+            </a>
+          </figcaption>
+        )}
+
         <section className={style.blog_container}>
           <BlockContent
             blocks={post.body}

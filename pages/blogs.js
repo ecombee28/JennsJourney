@@ -75,12 +75,7 @@ const blogs = ({
           >
             All Posts
           </p>
-          <p
-            className={`${style.selections} ${life && style.selected}`}
-            onClick={() => setQuery("life")}
-          >
-            Life
-          </p>
+
           <p
             className={`${style.selections} ${motherHood && style.selected}`}
             onClick={() => setQuery("mother")}
@@ -92,6 +87,12 @@ const blogs = ({
             onClick={() => setQuery("special")}
           >
             Special Needs
+          </p>
+          <p
+            className={`${style.selections} ${life && style.selected}`}
+            onClick={() => setQuery("life")}
+          >
+            Life
           </p>
         </section>
         <div className={style.blog_container}>

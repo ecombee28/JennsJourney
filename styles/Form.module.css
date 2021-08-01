@@ -11,7 +11,8 @@
 }
 
 .input_wrapper {
-    width: 100%;
+    width: 60%;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -113,6 +114,16 @@
     }
     .label {
         font-size: 1.2rem;
+    }
+    .input_wrapper {
+        width: 100%;
+        min-width: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+        position: relative;
     }
     .input {
         width: 60%;

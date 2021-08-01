@@ -17,6 +17,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
