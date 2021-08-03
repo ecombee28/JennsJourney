@@ -9,6 +9,8 @@ import { getPostBySlug, getAllCountsBySlug } from "../../lib/api";
 import Comments from "../../components/Comments";
 import AddLike from "../../components/AddLike";
 import Date from "../../components/Date";
+import getYouTubeId from "get-youtube-id";
+import Body from "../../components/Body";
 
 const Post = ({ post, likeCrt }) => {
   const [hashTags, setHashTags] = useState([]);
@@ -22,7 +24,25 @@ const Post = ({ post, likeCrt }) => {
   const { readTime } = useReadTime(post);
   const { imageUrl } = useImageBuilder(post);
 
-  const p = photoLink;
+  const serializers = {
+    types: {
+      youtube: ({ node }) => {
+        const { url } = node;
+        const id = getYouTubeId(url);
+        return (
+          <div className={style.youtube_container}>
+            <iframe
+              src={`https://www.youtube.com/embed/${id}`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              className={style.youtube}
+            ></iframe>
+          </div>
+        );
+      },
+    },
+  };
 
   useEffect(() => {
     const generateHasTags = () => {
@@ -56,6 +76,7 @@ const Post = ({ post, likeCrt }) => {
       setUnsplashHref(unsplashHref);
     };
 
+    //If the post has a valid hyperlink call getHyperlink()
     post.mainImage_ref && getHyperlink();
   }, [post]);
 
@@ -91,11 +112,7 @@ const Post = ({ post, likeCrt }) => {
         )}
 
         <section className={style.blog_container}>
-          <BlockContent
-            blocks={post.body}
-            projectId="jynldnuf"
-            dataset="production"
-          />
+          <Body blocks={post.body} />
           <div className={style.share}>
             <div className={style.heart_container}>
               <AddLike slug={post.slug.current} likeCount={likeCrt} />
