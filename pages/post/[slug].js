@@ -9,7 +9,6 @@ import { getPostBySlug, getAllCountsBySlug } from "../../lib/api";
 import Comments from "../../components/Comments";
 import AddLike from "../../components/AddLike";
 import Date from "../../components/Date";
-import getYouTubeId from "get-youtube-id";
 import Body from "../../components/Body";
 
 const Post = ({ post, likeCrt }) => {
@@ -23,26 +22,6 @@ const Post = ({ post, likeCrt }) => {
   const tags = ["#Vacations", "#Life"];
   const { readTime } = useReadTime(post);
   const { imageUrl } = useImageBuilder(post);
-
-  const serializers = {
-    types: {
-      youtube: ({ node }) => {
-        const { url } = node;
-        const id = getYouTubeId(url);
-        return (
-          <div className={style.youtube_container}>
-            <iframe
-              src={`https://www.youtube.com/embed/${id}`}
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              className={style.youtube}
-            ></iframe>
-          </div>
-        );
-      },
-    },
-  };
 
   useEffect(() => {
     const generateHasTags = () => {
