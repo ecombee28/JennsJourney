@@ -54,14 +54,13 @@ export async function getPostByCategory(category) {
   return data;
 }
 
-export async function getLatestPostByCategory(category) {
-  const data = await getClient(true).fetch(
-    `*[_type == "post" && $category in categories[]->title][0...3] | order(publishedAt desc){
-      ${postFields},
-      
-    }`,
-    { category }
-  );
+export async function getLatestPost() {
+  const data =
+    await client.fetch(`*[_type == "post"][0...4]| order(publishedAt desc){
+    ${postFields},
+    body
+  }`);
+
   return data;
 }
 

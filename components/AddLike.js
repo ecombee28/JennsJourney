@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/Addlike.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { addLikes } from "../lib/api";
+import { addLikes } from "../pages/api/api";
 
 const AddLike = ({ slug, likeCount }) => {
   const [postLiked, setPostLiked] = useState(false);

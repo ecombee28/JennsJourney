@@ -6,11 +6,11 @@
 }
 
 .landing_img_text {
-  width: 600px;
-  height: 300px;
+  width: 800px;
+  height: auto;
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 30%;
+  left: 15%;
   z-index: 20;
 }
 
@@ -18,10 +18,11 @@
   font-size: 2rem;
   color: black;
   font-family: 'Cormorant', serif;
+  font-weight: 600;
 }
 
 .landing_img_text span {
-  font-size: 5rem;
+  font-size: 7rem;
   font-weight: bold;
   color: var(--footerBlue);
   font-family: 'Dancing Script', cursive;
@@ -33,7 +34,7 @@
 }
 
 .main_content {
-  width: 85%;
+  width: 100%;
   min-height: 300px;
   margin: 40px auto;
   display: flex;
@@ -71,27 +72,21 @@
 
 @media screen and (max-width: 1600px) {
   .main_content {
-    width: 90%;
-    min-height: 500px;
     margin: 60px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1400px) {
   .landing_img_text {
-    width: 450px;
-    height: 300px;
+    width: 800px;
+    height: auto;
     position: absolute;
-    top: 40%;
-    left: 10%;
+    top: 30%;
+    left: 5vw;
     z-index: 20;
   }
   .landing_img_text p {
-    font-size: 1.4rem;
+    font-size: 1.9rem;
   }
   .landing_img_text span {
     font-size: 4rem;
@@ -107,20 +102,27 @@
   }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:1200px) {
   .landing_img_text {
-    width: 320px;
-    height: 300px;
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    z-index: 20;
+    width: 600px;
+    left: 5vw;
   }
   .landing_img_text p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .landing_img_text {
+    width: 60vw;
+    top: 5vh;
+    left: 5vw;
+  }
+  .landing_img_text p {
+    font-size: 2.6vw;
   }
   .landing_img_text span {
-    font-size: 2.3rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -151,17 +153,27 @@
     font-size: 1.7rem;
   }
   .landing_img_text {
-    width: 180px;
-    height: 300px;
-    position: absolute;
-    top: 10%;
-    left: 8%;
-    z-index: 20;
+    width: 70vw;
+    top: 11%;
+    left: 2%;
   }
   .landing_img_text p {
     font-size: .8rem;
+    font-weight: 600;
   }
   .landing_img_text span {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .landing_img_text p {
+    font-size: 3vw;
+    font-weight: 600;
+  }
+  .landing_img_text span {
+    font-size: 1.1rem;
+    font-weight: bold;
   }
 }

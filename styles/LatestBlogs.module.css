@@ -6,47 +6,15 @@
 }
 
 .selector_container {
-    width: 100%;
-    height: 60px;
-    padding-left: 5px;
-    margin: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-}
-
-.selections {
-    font-size: 1.5rem;
-    font-family: 700;
-    cursor: pointer;
-}
-
-.selections:hover {
-    text-decoration: underline;
-}
-
-.selected {
-    text-decoration: underline;
-}
-
-.blog_container {
-    width: 100%;
+    width: 97%;
     height: auto;
-    padding-top: 40px;
+    padding: 5px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid#000;
-    gap: 40px;
-    margin: auto;
-}
-
-.blog_wrappers {
-    width: 500px;
-    height: 500px;
-    margin: auto;
+    margin-top: 50px;
 }
 
 .title {
@@ -71,67 +39,36 @@
     box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 900px) {
-    .main_container {
-        width: 100%;
-    }
+@media screen and (max-width:1820px) {
     .selector_container {
-        gap: 15px;
-    }
-    .selections {
-        font-size: 1.2rem;
-        font-family: 700;
-        cursor: pointer;
-    }
-    .blog_container {
-        justify-content: flex-start;
-        gap: 50px;
+        width: 75%;
+        justify-content: space-evenly;
+        gap: 60px;
     }
 }
 
 /*  media query for ipad*/
 
 @media screen and (max-width: 1040px) and (orientation:landscape) {
-    .blog_container {
-        width: 95%;
-        justify-content: space-between;
-        align-items: center;
+    .selector_container {
+        width: 90%;
+        gap: 60px;
     }
 }
 
 /*  media query for ipad portrait*/
 
-@media screen and (max-width: 810px) and (orientation:portrait) {
-    .blog_container {
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
-        gap: 20px;
-    }
+@media screen and (max-width: 1010px) and (orientation:portrait) {
     .selector_container {
-        width: 80%;
-        margin: auto;
+        width: 98%;
+        gap: 60px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .main_container {
-        width: 100%;
-    }
+@media screen and (max-width: 780px) {
     .selector_container {
-        width: 80%;
+        width: 98%;
         gap: 15px;
-        margin: auto;
-    }
-    .selections {
-        font-size: 1rem;
-        font-family: 700;
-        cursor: pointer;
-    }
-    .blog_container {
         justify-content: center;
-        gap: 30px;
-        margin: auto;
     }
 }

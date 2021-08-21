@@ -7,19 +7,11 @@ import AboutComponent from "../components/AboutComponent";
 import {
   getAllCommentCounts,
   getAllLikeCounts,
-  getLatestPostByCategory,
-} from "../lib/api";
+  getLatestPost,
+} from "../pages/api/api";
 
-export default function Home({
-  likeCount,
-  commentCount,
-  lifePost,
-  specialPost,
-  motherPost,
-}) {
-  const allLifePost = useMapPost(lifePost);
-  const allSpecialPost = useMapPost(specialPost);
-  const allMotherPost = useMapPost(motherPost);
+export default function Home({ likeCount, commentCount, latestPost }) {
+  const mappedLatestPost = useMapPost(latestPost);
 
   return (
     <div>
@@ -34,9 +26,14 @@ export default function Home({
           <p>
             <span>Welcome!</span> <br />
             <br />
-            Jenn’s journey is about my favorite topics which includes raising
-            children with autism, managing stress, saving money, career joy and
-            more!
+            Life is a gift and there is purpose in the journey: <br />
+            <br />
+            Jenn's Journey is a blog about my journey written to inspire and
+            encourage you. You'll get a glimpse of what it's like to raise
+            children on the autism spectrum, pursue work-life balance, and more.
+            <br />
+            <br />
+            It's my life- the unfiltered version.
           </p>
         </div>
       </div>
@@ -46,9 +43,7 @@ export default function Home({
         <LatestBlogs
           likeCount={likeCount}
           commentCount={commentCount}
-          allLifePost={allLifePost}
-          allSpecialPost={allSpecialPost}
-          allMotherPost={allMotherPost}
+          post={mappedLatestPost.mappedPost}
         />
         <AboutComponent />
       </main>
@@ -59,11 +54,9 @@ export default function Home({
 export const getServerSideProps = async () => {
   const allCommentCounts = await getAllCommentCounts();
   const allLikeCounts = await getAllLikeCounts();
-  const latestLikePosts = await getLatestPostByCategory("Life");
-  const latestSpecialPosts = await getLatestPostByCategory("Special Needs");
-  const latestMotherPosts = await getLatestPostByCategory("Motherhood");
+  const latestPosts = await getLatestPost();
 
-  if (!latestLikePosts) {
+  if (!latestPosts) {
     return {
       props: {
         posts: [],
@@ -74,9 +67,7 @@ export const getServerSideProps = async () => {
       props: {
         likeCount: allLikeCounts,
         commentCount: allCommentCounts,
-        lifePost: latestLikePosts,
-        specialPost: latestSpecialPosts,
-        motherPost: latestMotherPosts,
+        latestPost: latestPosts,
       },
     };
   }

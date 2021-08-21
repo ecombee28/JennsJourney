@@ -4,100 +4,24 @@ import style from "../styles/LatestBlogs.module.css";
 import BlogPreview from "./BlogPreview";
 import NoPostFound from "./NoPostFound";
 
-const BlogSearch = ({
-  likeCount,
-  commentCount,
-  allLifePost,
-  allSpecialPost,
-  allMotherPost,
-}) => {
-  const [query, setQuery] = useState("mother");
-  const [life, setLife] = useState(true);
-  const [motherHood, setMotherHood] = useState(false);
-  const [special, setSpecial] = useState(false);
-
-  useEffect(() => {
-    const changeQuery = () => {
-      if (query === "life") {
-        setLife(true);
-        setMotherHood(false);
-        setSpecial(false);
-      } else if (query === "mother") {
-        setLife(false);
-        setMotherHood(true);
-        setSpecial(false);
-      } else {
-        setLife(false);
-        setMotherHood(false);
-        setSpecial(true);
-      }
-    };
-
-    changeQuery();
-  }, [query]);
-
+const BlogSearch = ({ likeCount, commentCount, post }) => {
   return (
     <div className={style.main_container}>
       <section className={style.selector_container}>
-        <p
-          className={`${style.selections} ${motherHood && style.selected}`}
-          onClick={() => setQuery("mother")}
-        >
-          Motherhood
-        </p>
-        <p
-          className={`${style.selections} ${special && style.selected}`}
-          onClick={() => setQuery("special")}
-        >
-          Special Needs
-        </p>
-        <p
-          className={`${style.selections} ${life && style.selected}`}
-          onClick={() => setQuery("life")}
-        >
-          Life
-        </p>
-      </section>
-      <div className={style.blog_container}>
-        {query === "life" ? (
-          allLifePost.mappedPost.length == 0 ? (
-            <NoPostFound />
-          ) : (
-            allLifePost.mappedPost.map((p, i) => (
-              <BlogPreview
-                key={i}
-                blog={p}
-                likeCount={likeCount}
-                commentCount={commentCount}
-              />
-            ))
-          )
-        ) : query === "mother" ? (
-          allMotherPost.mappedPost.length == 0 ? (
-            <NoPostFound />
-          ) : (
-            allMotherPost.mappedPost.map((p, i) => (
-              <BlogPreview
-                key={i}
-                blog={p}
-                likeCount={likeCount}
-                commentCount={commentCount}
-              />
-            ))
-          )
-        ) : allSpecialPost.mappedPost.length == 0 ? (
-          <NoPostFound />
-        ) : (
-          allSpecialPost.mappedPost.map((p, i) => (
+        {post ? (
+          post.map((p) => (
             <BlogPreview
-              key={i}
+              key={p._id}
               blog={p}
               likeCount={likeCount}
               commentCount={commentCount}
             />
           ))
+        ) : (
+          <NoPostFound />
         )}
-      </div>
+      </section>
+
       <Link href="/blogs">
         <button className={style.more_post_btn}>See all post</button>
       </Link>

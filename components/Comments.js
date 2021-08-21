@@ -7,10 +7,9 @@ import {
   addComments,
   getAllReplaysForSlug,
   addReplays,
-} from "../lib/api";
+} from "../pages/api/api";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import ColorPicker from "./ColorPicker";
 
 export default function Comments({ slug }) {
   const [comments, setComments] = useState([]);

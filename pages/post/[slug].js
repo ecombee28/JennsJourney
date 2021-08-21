@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import style from "../../styles/Post.module.css";
-import BlockContent from "@sanity/block-content-to-react";
 import ShareButtons from "../../components/ShareButton";
 import useReadTime from "../../customHooks/useReadTime";
 import useImageBuilder from "../../customHooks/useImageBuilder";
-import { getPostBySlug, getAllCountsBySlug } from "../../lib/api";
+import { getPostBySlug, getAllCountsBySlug } from "../api/api";
 import Comments from "../../components/Comments";
 import AddLike from "../../components/AddLike";
 import Date from "../../components/Date";
