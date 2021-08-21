@@ -9,7 +9,7 @@ import {
   getAllCommentCounts,
   getAllLikeCounts,
   getPostByCategory,
-} from "../lib/api";
+} from "../pages/api/api";
 
 const blogs = ({
   posts,

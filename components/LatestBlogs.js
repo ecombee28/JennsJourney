@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import style from "../styles/LatestBlogs.module.css";
 import BlogPreview from "./BlogPreview";
 import NoPostFound from "./NoPostFound";
