@@ -55,6 +55,11 @@
     cursor: pointer;
 }
 
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.9rem;
+}
+
 @media screen and (max-width: 960px) {
     .about_image {
         width: 250px;
@@ -107,6 +112,7 @@
 
 @media screen and (max-width: 680px) {
     .main_container {
+        width: 100%;
         height: 580px;
         gap: 0px;
         padding-top: 10px;
@@ -141,7 +147,7 @@
         align-items: center;
         gap: 20px;
         text-align: center;
-        font-size: .9rem;
+        font-size: 1rem;
     }
     .more_info_btn {
         padding: 5px 10px;

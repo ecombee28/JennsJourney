@@ -65,12 +65,6 @@ const Nav = () => {
                 About
               </li>
             </Link>
-
-            {/* <Link href="/contact">
-              <li className={style.nav_list} onClick={openNavMenu}>
-                Contact
-              </li>
-            </Link> */}
           </div>
           <img
             src="/mini_header_logo.png"

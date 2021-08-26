@@ -15,7 +15,7 @@
 
 .landing_image_container {
     width: 100%;
-    height: 20vh;
+    height: 230px;
     min-height: 15vh;
     position: relative;
     background-color: var(--white);
@@ -85,12 +85,12 @@
 }
 
 .main_logo {
-    width: 500px;
+    width: 650px;
     object-fit: contain;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-48%, -50%);
 }
 
 .mini_logo {

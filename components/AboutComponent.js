@@ -10,9 +10,7 @@ const AboutComponent = () => {
       </div>
       <div className={style.right_container}>
         <section className={style.right_container_text_wrapper}>
-          <p style={{ fontFamily: "'Dancing Script', cursive" }}>
-            About Jennifer
-          </p>
+          <p className={style.title}>About Jennifer</p>
           <p>
             You can call me Jenn! My journey has had many twist and turns but I
             wouldn't change it for the world!

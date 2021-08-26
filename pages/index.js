@@ -39,8 +39,8 @@ export default function Home({ likeCount, commentCount, latestPost }) {
           commentCount={commentCount}
           post={mappedLatestPost.mappedPost}
         />
-        <AboutComponent />
       </main>
+      <AboutComponent />
     </div>
   );
 }
