@@ -21,19 +21,13 @@ export default function Home({ likeCount, commentCount, latestPost }) {
         <link rel="shortcut icon" href="logo.ico" />
       </Head>
       <div className={style.recent_blogs_container}>
-        <img src="/ee.jpg" className={style.img} />
+        <img src="/landing_image.jpg" className={style.img} />
         <div className={style.landing_img_text}>
           <p>
             <span>Welcome!</span> <br />
             <br />
-            Life is a gift and there is purpose in the journey: <br />
-            <br />
             Jenn's Journey is a blog about my journey written to inspire and
-            encourage you. You'll get a glimpse of what it's like to raise
-            children on the autism spectrum, pursue work-life balance, and more.
-            <br />
-            <br />
-            It's my life- the unfiltered version.
+            encourage you.
           </p>
         </div>
       </div>

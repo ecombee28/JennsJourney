@@ -23,4 +23,26 @@
 
 .text {
     font-size: 1.7rem;
+    font-weight: 600;
+    font-family: 'Cormorant', serif;
+}
+
+@media screen and (max-width:480px) {
+    .main_container {
+        width: 90%;
+        margin: 50px auto;
+    }
+    .img {
+        width: 70%;
+        object-fit: contain;
+        margin: auto;
+    }
+    .title {
+        font-size: 1.6rem;
+    }
+    .text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: 'Cormorant', serif;
+    }
 }
