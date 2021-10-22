@@ -9,6 +9,7 @@ const about = () => {
         <title>About | Jenns Journey</title>
         <meta name="keywords" content="web dev" />
         <link rel="shortcut icon" href="logo.ico" />
+        <base target="_blank" />
       </Head>
       <div className={style.main_container}>
         <h1 className={style.title}>What is Jenn's Journey?</h1>

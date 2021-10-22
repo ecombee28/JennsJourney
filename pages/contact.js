@@ -10,6 +10,7 @@ const contact = () => {
         <title>Contact | Jenns Journey</title>
         <meta name="keywords" content="web dev" />
         <link rel="shortcut icon" href="logo.ico" />
+        <base target="_blank" />
       </Head>
       <h1>contact</h1>
     </div>
