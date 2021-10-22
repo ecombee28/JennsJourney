@@ -19,6 +19,7 @@ export default function Home({ likeCount, commentCount, latestPost }) {
         <title>Jenns Journey | Home</title>
         <meta name="keywords" content="web dev" />
         <link rel="shortcut icon" href="logo.ico" />
+        <base target="_blank" />
       </Head>
       <div className={style.recent_blogs_container}>
         <img src="/landing_image.jpg" className={style.img} />

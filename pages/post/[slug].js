@@ -58,12 +58,15 @@ const Post = ({ post, likeCrt }) => {
     post.mainImage_ref && getHyperlink();
   }, [post]);
 
+  console.log(post.body);
+
   return (
     <>
       <Head>
         <title>{post.title} | Jenns Journey</title>
         <meta name="keywords" content="web dev" />
         <link rel="shortcut icon" href="logo.ico" />
+        <base target="_blank" />
       </Head>
       <div className={style.main_wrapper}>
         <p className={style.title}>{post.title}</p>

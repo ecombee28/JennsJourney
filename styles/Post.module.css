@@ -133,6 +133,10 @@
     font-size: 1.5rem;
 }
 
+.blog_container a {
+    color: var(--blue);
+}
+
 .share {
     width: 100%;
     margin: 15px 0;
