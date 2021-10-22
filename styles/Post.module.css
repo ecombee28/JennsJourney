@@ -137,6 +137,10 @@
     color: var(--blue);
 }
 
+.blog_container a:hover {
+    text-decoration: underline;
+}
+
 .share {
     width: 100%;
     margin: 15px 0;

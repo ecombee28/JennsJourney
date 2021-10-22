@@ -72,15 +72,6 @@ export async function getAllPosts() {
   return data;
 }
 
-export async function getLatestPosts() {
-  const data =
-    await client.fetch(`*[_type == "post"][0...6]| order(publishedAt desc){
-      ${postFields},
-      body
-    }`);
-  return data;
-}
-
 export async function getCommentsBySlug(slug) {
   const fetchComments = await axios.post(
     `https://combeecreations.com/emdbapi/public/api/blog/getcomments`,
