@@ -6,26 +6,42 @@
 }
 
 .landing_img_text {
-  width: 50%;
+  width: 30%;
+  min-width: 200px;
   height: auto;
   position: absolute;
-  top: 45%;
-  left: 20%;
+  top: 50%;
+  left: 8vw;
+  transform: translateY(-50%);
   z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .landing_img_text p {
-  font-size: clamp(1.2rem, 2.2vw, 2.2vw);
-  color: black;
-  font-family: 'Cormorant', serif;
-  font-weight: 600;
-}
-
-.landing_img_text span {
-  font-size: 6.5vw;
+  font-size: clamp(3rem, 8vw, 12rem);
   font-weight: bold;
   color: var(--footerBlue);
   font-family: 'Dancing Script', cursive;
+}
+
+.hero_btn {
+  padding: 7px 20px;
+  color: var(--white);
+  font-size: clamp(1rem, 2vw, 3rem);
+  background-color: var(--footerBlue);
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: all .2s ease;
+}
+
+.hero_btn:hover {
+  background-color: var(--btn-hover);
+  transition: all .2s ease;
 }
 
 .img {
@@ -99,30 +115,16 @@
     align-items: center;
     gap: 60px;
   }
-  .landing_img_text {
-    width: 60%;
-    top: 22%;
-    left: 10%;
-  }
-  .landing_img_text p {
-    font-size: .8rem;
-  }
-  .landing_img_text span {
-    font-size: 2rem;
+  .hero_btn {
+    padding: 6px 6px;
+    font-size: .9rem;
   }
 }
 
 @media screen and (max-width:780px) {
-  .landing_img_text {
-    width: 45%;
-    top: 37%;
-    left: 22%;
-  }
-  .landing_img_text p {
-    font-size: 1rem;
-  }
-  .landing_img_text span {
-    font-size: 2.3rem;
+  .hero_btn {
+    padding: 6px 6px;
+    font-size: .9rem;
   }
 }
 
@@ -138,16 +140,5 @@
   }
   .latest_title {
     font-size: 1.7rem;
-  }
-  .landing_img_text {
-    width: 60%;
-    top: 22%;
-    left: 10%;
-  }
-  .landing_img_text p {
-    font-size: .8rem;
-  }
-  .landing_img_text span {
-    font-size: 2rem;
   }
 }

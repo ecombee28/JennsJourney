@@ -4,6 +4,7 @@ import style from "../styles/Home.module.css";
 import LatestBlogs from "../components/LatestBlogs.js";
 import useMapPost from "../customHooks/useMapPost";
 import AboutComponent from "../components/AboutComponent";
+import Link from "next/link";
 import {
   getAllCommentCounts,
   getAllLikeCounts,
@@ -24,12 +25,10 @@ export default function Home({ likeCount, commentCount, latestPost }) {
       <div className={style.recent_blogs_container}>
         <img src="/landing_image.jpg" className={style.img} />
         <div className={style.landing_img_text}>
-          <p>
-            <span>Welcome!</span> <br />
-            <br />
-            Jenn's Journey is a blog about my journey written to inspire and
-            encourage you.
-          </p>
+          <p>Welcome!</p>
+          <Link href="/about">
+            <button className={style.hero_btn}>About Jenns Journey</button>
+          </Link>
         </div>
       </div>
 
