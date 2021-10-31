@@ -36,14 +36,15 @@ const Nav = () => {
           className={` ${style.show_mini_logo}`}
         />
         <div className={style.hamburger_wrapper} onClick={openNavMenu}>
-          {openMenu ? (
-            <FontAwesomeIcon
-              icon={faTimesCircle}
-              className={style.mini_navbar_icon}
-            />
-          ) : (
-            <FontAwesomeIcon icon={faBars} className={style.mini_navbar_icon} />
-          )}
+          <div
+            className={`${style.line1} ${openMenu && style.slide_line1}`}
+          ></div>
+          <div
+            className={`${style.line2} ${openMenu && style.slide_line2}`}
+          ></div>
+          <div
+            className={`${style.line3} ${openMenu && style.slide_line3}`}
+          ></div>
         </div>
 
         <nav className={`${style.nav}  ${openMenu && style.open}`} ref={node}>
@@ -66,10 +67,7 @@ const Nav = () => {
               </li>
             </Link>
           </div>
-          <img
-            src="/mini_header_logo.png"
-            className={`${style.mini_logo} ${show && style.show}`}
-          />
+
           <div className={style.social_media}>
             <SocialIcon position={"header"} />
           </div>
