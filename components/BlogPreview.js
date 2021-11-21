@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import style from "../styles/BlogPreview.module.css";
 import Link from "next/link";
 import useReadTime from "../customHooks/useReadTime";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Date from "./Date";

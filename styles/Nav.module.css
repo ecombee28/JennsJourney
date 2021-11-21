@@ -96,10 +96,15 @@
 }
 
 .show_mini_logo {
-    display: none;
+    display: block;
+    width: 230px;
+    object-fit: contain;
 }
 
 .show {
+    width: 230px;
+    object-fit: contain;
+    z-index: 20;
     opacity: 1;
     transition: opacity .5s ease-in-out;
 }
@@ -124,6 +129,7 @@
     .landing_image_container {
         display: none;
     }
+
     .header {
         display: flex;
         flex-direction: column;
@@ -133,8 +139,9 @@
         background-color: var(--white);
         position: relative;
     }
+
     .nav {
-        width: 60%;
+        width: 40%;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -152,6 +159,7 @@
         z-index: 30;
         transition: all .5s cubic-bezier(0.25, 0.1, 0.56, 0.96);
     }
+
     .hamburger_wrapper {
         width: 30px;
         height: 23px;
@@ -164,32 +172,39 @@
         top: 20px;
         z-index: 100;
     }
+
     .line1, .line2, .line3 {
         width: 100%;
         height: 3px;
         background-color: var(--hamburger-gray);
         transition: all .5s cubic-bezier(0.25, 0.1, 0.56, 0.96);
     }
+
     .line2 {
         width: 80%;
     }
+
     .open {
         transform: translateX(0px);
         transition: all .5s cubic-bezier(0.25, 0.1, 0.56, 0.96);
     }
+
     .slide_line1 {
         transform: rotate(-45deg) translate(-6px, 7px);
         transition: all .5s cubic-bezier(0.25, 0.1, 0.56, 0.96);
     }
+
     .slide_line2 {
         transform: translateX(-30px);
         opacity: 0;
         transition: all .3s cubic-bezier(0.25, 0.1, 0.56, 0.96);
     }
+
     .slide_line3 {
         transform: rotate(45deg) translate(-6px, -9px);
         transition: all .5s cubic-bezier(0.25, 0.1, 0.56, 0.96);
     }
+
     .nav_link_container {
         width: 70%;
         display: flex;
@@ -199,6 +214,7 @@
         gap: 25px;
         background-color: var(--white);
     }
+
     .nav_list {
         list-style: none;
         display: inline-block;
@@ -209,9 +225,11 @@
         cursor: pointer;
         font-family: 'Cormorant', serif;
     }
+
     .mini_logo {
         display: none;
     }
+
     .social_media {
         width: 90%;
         max-width: 200px;
@@ -221,18 +239,25 @@
         align-items: flex-start;
         gap: 20px;
     }
+
     .show_mini_logo {
         display: block;
         width: 230px;
         object-fit: contain;
-        z-index: 10;
+        z-index: 20;
     }
 }
 
 @media screen and (max-width: 480px) {
+
     .hamburger_wrapper {
         left: 15px;
         top: 20px;
+    }
+
+    .nav {
+        width: 70%;
+
     }
 }
 

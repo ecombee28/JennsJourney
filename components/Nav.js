@@ -2,9 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import style from "../styles/Nav.module.css";
 import Link from "next/link";
 import SocialIcon from "./SocialIcon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 
 const Nav = () => {
   const [show, setShow] = useState(false);
@@ -31,10 +28,6 @@ const Nav = () => {
         <img src="/main-logo.png" className={style.main_logo} />
       </div>
       <div className={style.header}>
-        <img
-          src="/mini_header_logo.png"
-          className={` ${style.show_mini_logo}`}
-        />
         <div className={style.hamburger_wrapper} onClick={openNavMenu}>
           <div
             className={`${style.line1} ${openMenu && style.slide_line1}`}
